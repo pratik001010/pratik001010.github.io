@@ -11,12 +11,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:wght@700&family=Wix+Madefor+Text:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         /* Minimalist & Professional Stylesheet */
         body {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            /* NEW FONT: This is the main font from the inspiration site */
+            font-family: 'Wix Madefor Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: #ffffff;
             color: #212529;
         }
@@ -27,19 +28,19 @@
             background-color: #ffffff !important;
         }
         .navbar-brand {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Wix Madefor Text', sans-serif;
             font-weight: 700;
             font-size: 1.25rem;
         }
         .navbar-nav .nav-link {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Wix Madefor Text', sans-serif;
             font-weight: 500;
             color: #333;
             transition: color 0.2s ease-in-out;
         }
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
-            color: #0d6efd !important; /* Standard Bootstrap blue */
+            color: #0d6efd !important;
         }
         .dropdown-item:hover {
             color: #0d6efd;
@@ -48,67 +49,64 @@
 
         /* --- 2. HERO SECTION (UPDATED) --- */
         .hero-section {
-            background-color: #f8f9fa; /* Light grey, professional */
+            background-color: #f8f9fa;
             padding: 100px 0;
             text-align: left;
         }
         
-        /* Style for "Hi," */
+        /* NEW FONT: 'Playfair Display' for "Hi," */
         .hero-section h1.hero-title {
-            font-size: 5rem; /* Make it big */
-            font-weight: 400;
+            font-size: 7rem; /* Large size like the example */
+            font-weight: 700;
             margin-bottom: 20px;
-            font-family: 'Georgia', 'Times New Roman', serif; /* Elegant font for "Hi," */
-            color: #212529; /* Black for "Hi," */
+            font-family: 'Playfair Display', serif;
+            color: #212529;
         }
         
-        /* --- UPDATED: Style for "Welcome." --- */
+        /* NEW FONT: 'Caveat' for "Welcome." */
         .hero-title .welcome-text {
-            font-family: 'Pacifico', cursive; /* Handwritten font */
-            font-weight: 400; /* Pacifico is only 400 */
+            font-family: 'Caveat', cursive; /* New handwritten font */
+            font-weight: 700;
+            font-size: 6.5rem; /* Matched size */
             
             /* The Gradient */
             background-image: linear-gradient(
                 -45deg, 
-                #ee7752, /* Orange */
-                #e73c7e, /* Pink */
-                #23a6d5, /* Blue */
-                #23d5ab  /* Green */
+                #ee7752, #e73c7e, #23a6d5, #23d5ab
             );
             background-size: 300% 300%;
-            background-position: 0% 50%; /* Static gradient position */
+            background-position: 0% 50%;
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             
-            /* The NEW Animation: Fade In/Out */
+            /* The Fading Animation */
             animation: fade-in-out 3s ease-in-out infinite;
         }
 
-        /* The NEW Keyframe Animation */
+        /* The Keyframe Animation */
         @keyframes fade-in-out {
             0%   { opacity: 1; }
             50%  { opacity: 0; }
             100% { opacity: 1; }
         }
-        /* --- END OF UPDATE --- */
-
+        
         .hero-section .lead {
-            font-family: 'Poppins', sans-serif;
             font-size: 1.5rem;
-            font-weight: 500; /* Make "I'm Pratik..." stronger */
+            font-weight: 500;
             margin-bottom: 10px;
         }
         .hero-section h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem; /* Slightly smaller */
+            font-size: 1.5rem;
             font-weight: 400;
             color: #0d6efd;
             margin-bottom: 25px;
         }
+        /* NEW FONT SIZE: Matching the example's body text */
         .hero-section .summary {
-            font-size: 1.15rem;
+            font-size: 1.375rem; /* 22px */
             max-width: 700px;
+            font-weight: 400;
         }
 
         /* --- 3. Global Section Styles --- */
@@ -116,14 +114,23 @@
             padding: 80px 0;
         }
         section h2.section-title {
-            font-family: 'Poppins', sans-serif;
-            text-align: left;
             font-weight: 700;
             color: #0d6efd;
             margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+        #about h2.section-title {
+             text-align: left;
+        }
+        /* Center titles for other sections */
+        #skills h2.section-title,
+        #projects h2.section-title,
+        #education h2.section-title,
+        #references h2.section-title {
+            text-align: center;
+        }
+
 
         /* --- 4. About Me Section --- */
         #about p.lead {
@@ -151,13 +158,12 @@
             color: #0d6efd;
         }
         .skill-badge {
-            font-family: 'Poppins', sans-serif;
             font-size: 0.9rem;
             font-weight: 500;
             margin: 4px;
         }
 
-        /* --- 6. Projects Section (NEW LAYOUT) --- */
+        /* --- 6. Projects Section --- */
         .project-item {
             margin-bottom: 2.5rem;
             padding-bottom: 2.5rem;
@@ -169,11 +175,9 @@
             padding-bottom: 0;
         }
         .project-item h3 {
-            font-family: 'Poppins', sans-serif;
             font-weight: 600;
         }
         .project-item .btn {
-            font-family: 'Poppins', sans-serif;
             font-weight: 500;
         }
 
@@ -192,9 +196,6 @@
         .card .card-link {
             text-decoration: none;
         }
-        .card-title, .card-subtitle {
-            font-family: 'Poppins', sans-serif;
-        }
 
         /* --- 8. Footer --- */
         footer {
@@ -203,12 +204,8 @@
             padding: 60px 0;
         }
         footer h3 {
-            font-family: 'Poppins', sans-serif;
             font-weight: 600;
             color: #fff;
-        }
-        footer p {
-            font-family: 'Poppins', sans-serif;
         }
         footer .social-links a {
             color: white;
@@ -258,7 +255,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#references">References</a>
                     </li>
-                    <li class_ ="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -345,7 +342,7 @@
                             <div class="card-body">
                                 <h4 class="card-title text-center"><i class="fas fa-code card-title-icon"></i> Programming</h4>
                                 <hr>
-                                <div class_ ="text-center">
+                                <div class="text-center">
                                     <span class="badge bg-primary skill-badge">Baremetal-C, C++</span>
                                     <span class="badge bg-primary skill-badge">Python</span>
                                     <span class="badge bg-primary skill-badge">MATLAB</span>
@@ -442,7 +439,7 @@
                 <ul class="list-group">
                     <li class="list-group-item p-3">
                         <h5 class="mb-1">Erasmus Mundus MSc in Embedded Intelligence (EMINENT)</h5>
-                        <p class="mb-1 text-muted">A multi-semester program across Europe.</p>
+                        <p class_ ="mb-1 text-muted">A multi-semester program across Europe.</p>
                         <small>
                             <strong>3rd Sem (IoT & Robotics):</strong> University of Orléans, France (Current) <br>
                             <strong>2nd Sem (Sensors & Devices):</strong> University of Siegen, Germany <br>
@@ -454,7 +451,7 @@
                         <p class="mb-1 text-muted">Hainan Normal University, China</p>
                         <small><strong>Thesis:</strong> Intelligent home system design and Implementation</small>
                     </li>
-                    <li class.list-group-item p-3">
+                    <li class="list-group-item p-3">
                         <h5 class="mb-1">Diploma in Computer Engineering</h5>
                         <p class="mb-1 text-muted">Pokhara Engineering College, Nepal</p>
                     </li>
