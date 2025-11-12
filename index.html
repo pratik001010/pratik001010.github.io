@@ -8,120 +8,155 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    
+
     <style>
-        /* Custom styles for a modern look */
+        /* Minimalist & Professional Stylesheet */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            /* HIDE THE DEFAULT CURSOR */
-            cursor: none; 
-        }
-        
-        /* Ensure all clickable items also hide the cursor */
-        a, button, .btn {
-            cursor: none;
+            /* Use standard system fonts for a clean look */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #212529;
+            /* Default cursor is automatically restored */
         }
 
+        /* --- 1. Navigation Bar --- */
         .navbar {
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            background-color: #ffffff !important;
         }
         .navbar-brand {
             font-weight: 700;
+            font-size: 1.25rem;
         }
-        
-        /* --- NEW: NAVBAR GLOW EFFECT --- */
         .navbar-nav .nav-link {
             font-weight: 500;
-            transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+            color: #333;
+            transition: color 0.2s ease-in-out;
         }
-
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
-            color: #2563eb !important; /* Force the blue color */
-            transform: translateY(-2px); /* Lifts the text up slightly */
-            text-shadow: 0 0 10px rgba(37, 99, 235, 0.6); /* This is the "glow" */
+            color: #0d6efd !important; /* Standard Bootstrap blue */
+            /* No glow effect */
         }
-        
-        .dropdown-item {
-            transition: background-color 0.2s ease, color 0.2s ease;
-            cursor: none; /* Keep the custom cursor */
-        }
-        
         .dropdown-item:hover {
-            color: #2563eb;
-            background-color: #f4f7f6; /* A slight grey for dropdown hover */
+            color: #0d6efd;
+            background-color: #f8f9fa;
         }
-        /* --- END OF NEW CSS --- */
 
-
+        /* --- 2. Hero Section --- */
         .hero-section {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1533425332312-58e63b65b716?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
+            background-color: #f8f9fa; /* Light grey, professional */
             padding: 100px 0;
-            text-align: center;
+            text-align: left;
         }
-
+        .hero-section .lead {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 5px;
+        }
         .hero-section h1 {
             font-size: 3.5rem;
             font-weight: 700;
+            margin-bottom: 15px;
         }
-        .hero-section p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin: 15px auto;
+        .hero-section h2 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: #0d6efd;
+            margin-bottom: 25px;
         }
-        .hero-section .btn {
-            font-weight: 600;
-            padding: 12px 24px;
-            font-size: 1.1rem;
+        .hero-section .summary {
+            font-size: 1.15rem;
+            max-width: 700px;
         }
-        
+
+        /* --- 3. Global Section Styles --- */
         section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
         section h2.section-title {
-            text-align: center;
+            text-align: left;
             font-weight: 700;
-            color: #2563eb;
+            color: #0d6efd;
             margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        .project-card {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        }
-        .card-title-icon {
-            font-size: 1.5rem;
-            margin-right: 10px;
-            color: #2563eb;
-        }
-        .skill-badge {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin: 4px;
+
+        /* --- 4. About Me Section --- */
+        #about p.lead {
+            font-size: 1.25rem;
+            font-weight: 400;
         }
         .about-img {
             width: 100%;
-            max-width: 350px;
-            border-radius: 50%;
-            border: 8px solid #fff;
+            max-width: 300px;
+            border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             margin: 0 auto;
             display: block;
         }
+
+        /* --- 5. Skills Section --- */
+        .skill-card {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border-radius: 8px;
+        }
+        .card-title-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #0d6efd;
+        }
+        .skill-badge {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 4px;
+        }
+
+        /* --- 6. Projects Section (NEW LAYOUT) --- */
+        .project-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .project-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .project-item h3 {
+            font-weight: 600;
+        }
+        .project-item .btn {
+            font-weight: 500;
+        }
+
+        /* --- 7. Education & References --- */
+        #education, #references {
+            background-color: #f8f9fa; /* Light grey background */
+        }
+        .list-group-item, .card {
+            border-radius: 8px;
+        }
+        .list-group-item {
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: none;
+        }
+        .card .card-link {
+            text-decoration: none;
+        }
+
+        /* --- 8. Footer --- */
         footer {
             background-color: #343a40;
             color: #ccc;
-            padding: 40px 0;
-            text-align: center;
+            padding: 60px 0;
+        }
+        footer h3 {
+            font-weight: 600;
+            color: #fff;
         }
         footer .social-links a {
             color: white;
@@ -130,39 +165,20 @@
             transition: color 0.3s ease;
         }
         footer .social-links a:hover {
-            color: #2563eb;
+            color: #0d6efd;
         }
-
-        /* --- Custom Cursor Dot CSS --- */
-        #cursor-dot {
-            width: 8px;
-            height: 8px;
-            background-color: white;
-            border-radius: 50%;
-            position: fixed; /* Use fixed positioning */
-            pointer-events: none; /* Lets you click through it */
-            z-index: 9999;
-            mix-blend-mode: difference; /* Inverts color! */
-            
-            /* Start hidden off-screen */
-            top: -20px;
-            left: -20px;
-            opacity: 0;
-
-            /* Add transitions for smooth movement and scaling */
-            transition: transform 0.2s ease-out, top 0.1s ease-out, left 0.1s ease-out, opacity 0.1s ease-out;
+        footer .footer-link {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
-        
-        #cursor-dot.hovered {
-            transform: scale(3.5); /* Make the dot bigger */
+        footer .footer-link:hover {
+            color: #0d6efd;
         }
-        /* --- End of Custom Cursor CSS --- */
 
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="70">
-
-    <div id="cursor-dot"></div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" id="mainNavbar">
         <div class="container">
@@ -181,16 +197,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#skills">Skills</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Projects
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#projects">All Projects</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#projects">LoRaWAN & IoT</a></li>
-                            <li><a class="dropdown-item" href="#projects">Robotics & Automation</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#education">Education</a>
@@ -208,30 +216,29 @@
 
     <main>
         
-        <section class="hero-section text-center" id="home">
+        <section class="hero-section" id="home">
             <div class="container">
-                <h1>Pratik Khadka</h1>
-                <p class="lead">MSc Student in Embedded Intelligence & IoT Systems</p>
-                <p>Passionate about transforming IoT technologies into innovative digital solutions for Smart Cities, Agriculture 4.0, and Sustainability.</p>
-                <a href="#projects" class="btn btn-light btn-lg">View My Work</a>
-                <a href="https://github.com/pratik001010" target="_blank" class="btn btn-outline-light btn-lg">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
+                <p class="lead">Hi, I'm</p>
+                <h1>Pratik Khadka.</h1>
+                <h2 class="mb-4">MSc Student in Embedded Intelligence & IoT Systems</h2>
+                <p class="summary">
+                    Passionate about transforming IoT technologies into innovative digital solutions for Smart Cities, Agriculture 4.0, and Sustainability.
+                </p>
             </div>
         </section>
 
         <section id="about">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-center mb-4 mb-lg-0">
-                        <img src="https://via.placeholder.com/350/2563eb/ffffff?text=PK" alt="Pratik Khadka" class="about-img">
-                    </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-7">
+                        <h2 class="section-title">About Me</h2>
                         <p class="lead">Erasmus Mundus MSc student in Embedded Intelligence and IoT Systems, passionate about transforming loT technologies into innovative digital solutions.</p>
                         <p>My background combines embedded hardware experience with an interest in loT-driven business models, smart services, and data analytics.</p>
                         <p>Experienced in STM32, ESP32, LoRaWAN, and Zigbee, I focus on connecting devices to cloud platforms for automation and insight generation. I am particularly interested in how loT can support digital innovation, sustainability, and the development of connected business ecosystems.</p>
-                        <p>Currently in my 3rd semester at the **University of Orléans, France**, specializing in IoT and Robotics, and actively **seeking an internship** for my 4th-semester thesis.</p>
+                        <p class="fw-bold">Currently in my 3rd semester at the University of Orléans, France, and actively seeking an internship for my 4th-semester thesis.</p>
+                    </div>
+                    <div class="col-lg-5 text-center d-none d-lg-block">
+                        <img src="https://via.placeholder.com/300/f8f9fa/ffffff?text=PK" alt="Pratik Khadka" class="about-img" style="border-radius: 8px;">
                     </div>
                 </div>
             </div>
@@ -242,9 +249,9 @@
                 <h2 class="section-title">Core Skills</h2>
                 <div class="row">
                     <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="card h-100">
+                        <div class="card h-100 skill-card">
                             <div class="card-body">
-                                <h4 class="card-title text-center"><i class="fas fa-microchip card-title-icon"></i> Embedded Systems & Microcontrollers</h4>
+                                <h4 class="card-title text-center"><i class="fas fa-microchip card-title-icon"></i> Embedded Systems</h4>
                                 <hr>
                                 <div class="text-center">
                                     <span class="badge bg-primary skill-badge">STM32 / ESP32</span>
@@ -254,22 +261,22 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="card h-100">
+                        <div class="card h-100 skill-card">
                             <div class="card-body">
-                                <h4 class="card-title text-center"><i class="fas fa-wifi card-title-icon"></i> IoT Protocols & Communication</h4>
+                                <h4 class="card-title text-center"><i class="fas fa-wifi card-title-icon"></i> IoT Protocols</h4>
                                 <hr>
                                 <div class="text-center">
                                     <span class="badge bg-primary skill-badge">LoRaWAN / Sigfox / Zigbee</span>
                                     <span class="badge bg-primary skill-badge">MQTT / CoAP / WiFi</span>
-                                    <span classs="badge bg-secondary skill-badge">CAN / FlexRay / I²C / SPI</span>
+                                    <span class="badge bg-secondary skill-badge">CAN / FlexRay / I²C / SPI</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="card h-100">
+                        <div class="card h-100 skill-card">
                             <div class="card-body">
-                                <h4 class="card-title text-center"><i class="fas fa-cloud card-title-icon"></i> Cloud Platforms & Dashboards</h4>
+                                <h4 class="card-title text-center"><i class="fas fa-cloud card-title-icon"></i> Cloud Platforms</h4>
                                 <hr>
                                 <div class="text-center">
                                     <span class="badge bg-primary skill-badge">AWS IoT Core</span>
@@ -280,23 +287,23 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="card h-100">
+                        <div class="card h-100 skill-card">
                             <div class="card-body">
-                                <h4 class="card-title text-center"><i class="fas fa-code card-title-icon"></i> Programming & Scripting</h4>
+                                <h4 class="card-title text-center"><i class="fas fa-code card-title-icon"></i> Programming</h4>
                                 <hr>
                                 <div class="text-center">
                                     <span class="badge bg-primary skill-badge">Baremetal-C, C++</span>
                                     <span class="badge bg-primary skill-badge">Python</span>
                                     <span class="badge bg-primary skill-badge">MATLAB</span>
-                                    <span class="badge bg-secondary skill-badge">Shell scripting with Linux</span>
+                                    <span class="badge bg-secondary skill-badge">Shell scripting</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="card h-100">
+                        <div class="card h-100 skill-card">
                             <div class="card-body">
-                                <h4 class="card-title text-center"><i class="fas fa-project-diagram card-title-icon"></i> Simulation & Circuit Design</h4>
+                                <h4 class="card-title text-center"><i class="fas fa-project-diagram card-title-icon"></i> Simulation</h4>
                                 <hr>
                                 <div class="text-center">
                                     <span class="badge bg-primary skill-badge">LTSpice / Proteus</span>
@@ -306,9 +313,9 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="card h-100">
+                        <div class="card h-100 skill-card">
                             <div class="card-body">
-                                <h4 class="card-title text-center"><i class="fas fa-drafting-compass card-title-icon"></i> PCB & Mechanical Tools</h4>
+                                <h4 class="card-title text-center"><i class="fas fa-drafting-compass card-title-icon"></i> PCB & Mechanical</h4>
                                 <hr>
                                 <div class="text-center">
                                     <span class="badge bg-primary skill-badge">Altinum Designer</span>
@@ -324,82 +331,61 @@
         <section id="projects">
             <div class="container">
                 <h2 class="section-title">Featured Projects</h2>
-                <div class="row">
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 project-card">
-                            <img src="https://via.placeholder.com/400x250/343a40/ffffff?text=LoRaWAN+ML" class="card-img-top" alt="LoRaWAN Project">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">LoRaWAN Indoor Path Loss Analysis</h5>
-                                <p class="card-text flex-grow-1">Investigates how environmental conditions affect LoRaWAN signal reliability in offices. Uses ML models (MLR, RF, XGBoost) on RSSI/SNR data to predict path loss and optimize spreading factors.</p>
-                                <a href="https://github.com/pratik001010/LoRaWAN-in-Indoor-Office-Environments-Environmental-Effects-on-Path-Loss-and-Signal-Reliability" target="_blank" class="btn btn-primary mt-auto"><i class="fab fa-github"></i> View on GitHub</a>
-                            </div>
-                        </div>
+                <div class="row project-item align-items-center">
+                    <div class="col-lg-5">
+                        <h3>LoRaWAN Indoor Path Loss Analysis</h3>
+                        <p class="text-muted">Investigates how environmental conditions affect LoRaWAN signal reliability in offices.</p>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div classs="card h-100 project-card">
-                            <img src="https://via.placeholder.com/400x250/343a40/ffffff?text=Smart+Home" class="card-img-top" alt="Smart Home Project">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Intelligent Home Automation System</h5>
-                                <p class="card-text flex-grow-1">Integrated system on Arduino Mega with biometric/RFID access, ESP32-CAM surveillance, and gas/fire detection. Features multi-mode control via IR remote and offline voice recognition.</p>
-                                <a href="https://github.com/pratik001010/INTELLIGENT-HOME-SYSTEM-DESIGN-AND-IMPLEMENTATION" target="_blank" class="btn btn-primary mt-auto"><i class="fab fa-github"></i> View on GitHub</a>
-                            </div>
-                        </div>
+                    <div class="col-lg-7">
+                        <p>Uses ML models (MLR, RF, XGBoost) on RSSI/SNR data to predict path loss and optimize spreading factors for improved energy efficiency and coverage.</p>
+                        <a href="https://github.com/pratik001010/LoRaWAN-in-Indoor-Office-Environments-Environmental-Effects-on-Path-Loss-and-Signal-Reliability" target="_blank" class="btn btn-outline-primary"><i class="fab fa-github"></i> View on GitHub</a>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 project-card">
-                            <img src="https://via.placeholder.com/400x250/343a40/ffffff?text=Hexapod+Robot" class="card-img-top" alt="Hexapod Robot">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">HEXAPOD ROBOT</h5>
-                                <p class="card-text flex-grow-1">A six-legged robot with 18 degrees of freedom (3 servos per leg). Focuses on gait generation, balance control, and terrain adaptability using inverse kinematics algorithms on an Arduino platform.</p>
-                                <a href="https://github.com/pratik001010/HEXAPOD-ROBOT" target="_blank" class="btn btn-primary mt-auto"><i class="fab fa-github"></i> View on GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 project-card">
-                            <img src="https://via.placeholder.com/400x250/343a40/ffffff?text=Automated+Beehive" class="card-img-top" alt="Automated Beehive">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Automated Beehive (Ongoing)</h5>
-                                <p class="card-text flex-grow-1">IoT-enabled "Agriculture 4.0" project integrating optical sensors for honey levels, a stepper-motor system for frame splitting, and 3D-printed honeyframes.</p>
-                                <a href="httpsD://drive.google.com/drive/folders/1zwYiBB785atWlqGulmsrUbIPSQ-P2Hcg?usp=sharing" target="_blank" class="btn btn-secondary mt-auto"><i class="fas fa-folder-open"></i> View Concept</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 project-card">
-                            <img src="https://via.placeholder.com/400x250/343a40/ffffff?text=CNC+Plotter" class="card-img-top" alt="CNC Plotter">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">PLOTBOT-mini CNC plotter</h5>
-                                <p class="card-text flex-grow-1">Built a mini CNC plotter from recycled DVD drive stepper motors and a servo pen mechanism. Interprets G-code from Inkscape to draw complex characters and logos.</p>
-                                <a href="httpsS://github.com/pratik001010/PLOTBOT-mini-CNC-plotter" target="_blank" class="btn btn-primary mt-auto"><i class="fab fa-github"></i> View on GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 project-card">
-                            <img src="https://via.placeholder.com/400x250/343a40/ffffff?text=ESP32-CAM" class="card-img-top" alt="ESP32-CAM Project">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">ESP32-CAM Outdoor Surveillance</h5>
-                                <p class="card-text flex-grow-1">Developed an outdoor surveillance system with pan-tilt functionality, motion detection, and on-board video recording. Streams real-time video via a built-in web server.</p>
-                                <a href="https://github.com/pratik001010/ESP32-CAM-Outdoor-Surveillance-System" target="_blank" class="btn btn-primary mt-auto"><i class="fab fa-github"></i> View on GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+                <hr>
+
+                <div class="row project-item align-items-center">
+                    <div class="col-lg-5">
+                        <h3>Intelligent Home Automation System</h3>
+                        <p class="text-muted">Integrated system on Arduino Mega with biometric/RFID access, ESP32-CAM surveillance, and gas/fire detection.</p>
+                    </div>
+                    <div class="col-lg-7">
+                        <p>Features multi-mode control via IR remote and offline voice recognition (DFRobot Gravity module) enabled efficient, hands-free operation.</p>
+                        <a href="https://github.com/pratik001010/INTELLIGENT-HOME-SYSTEM-DESIGN-AND-IMPLEMENTATION" target="_blank" class="btn btn-outline-primary"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="row project-item align-items-center">
+                    <div class="col-lg-5">
+                        <h3>HEXAPOD ROBOT</h3>
+                        <p class="text-muted">A six-legged robot with 18 degrees of freedom (3 servos per leg) on an Arduino platform.</p>
+                    </div>
+                    <div class="col-lg-7">
+                        <p>Focuses on gait generation, balance control, and terrain adaptability using inverse kinematics algorithms for autonomous exploration and surveillance.</p>
+                        <a href="https://github.com/pratik001010/HEXAPOD-ROBOT" target="_blank" class="btn btn-outline-primary"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row project-item align-items-center">
+                    <div class="col-lg-5">
+                        <h3>Automated Beehive (Ongoing)</h3>
+                        <p class="text-muted">IoT-enabled "Agriculture 4.0" project for non-intrusive honey harvesting.</p>
+                    </div>
+                    <div class="col-lg-7">
+                        <p>Integrating optical sensors for honey levels, a stepper-motor system for frame splitting, 3D-printed honeyframes, and an IoT dashboard for remote monitoring.</p>
+                        <a href="httpsD://drive.google.com/drive/folders/1zwYiBB785atWlqGulmsrUbIPSQ-P2Hcg?usp=sharing" target="_blank" class="btn btn-outline-secondary"><i class="fas fa-folder-open"></i> View Concept</a>
+                    </div>
+                </div>
+
             </div>
         </section>
         
         <section id="education" class="bg-light">
             <div class="container">
                 <h2 class="section-title">Education & Mobility</h2>
-                <ul class="list-group shadow-sm">
+                <ul class="list-group">
                     <li class="list-group-item p-3">
                         <h5 class="mb-1">Erasmus Mundus MSc in Embedded Intelligence (EMINENT)</h5>
                         <p class="mb-1 text-muted">A multi-semester program across Europe.</p>
@@ -427,7 +413,7 @@
                 <h2 class="section-title">References</h2>
                 <div class="row">
                     <div class="col-lg-4 mb-3">
-                        <div class="card h-100">
+                        <div class="card h-100 skill-card">
                             <div class="card-body">
                                 <h5 class="card-title">Prof. Dr. Peter Haring Bolívar</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">EMINENT Director</h6>
@@ -436,20 +422,20 @@
                         </div>
                     </div>
                     <div class="col-lg-4 mb-3">
-                        <div class="card h-100">
+                        <div class="card h-100 skill-card">
                             <div class="card-body">
                                 <h5 class="card-title">Assoc. Prof. Dr. Raphaël Canals</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">EMINENT Program Coordinator</h6>
-                                <p class="card-text">University of Orléans, France<br><a href="mailto:raphael.canals@univ-orleans.fr" class="card-link">raphael.canals@univ-orleans.fr</a></f>p>
+                                <p class="card-text">University of Orléans, France<br><a href="mailto:raphael.canals@univ-orleans.fr" class="card-link">raphael.canals@univ-orleans.fr</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 mb-3">
-                        <div class="card h-100">
+                        <div class="card h-100 skill-card">
                             <div class="card-body">
                                 <h5 class="card-title">Prof. Wang Ying Pin</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Undergraduate Supervisor</h6>
-                                <p class="card-text">Hainan Normal University, China<br><a href="mailto:371510397@qq.com" class="card-link">371510397@qq.com</a></a</p>
+                                <p class="card-text">Hainan Normal University, China<br><a href="mailto:371510397@qq.com" class="card-link">371510397@qq.com</a></p>
                             </div>
                         </div>
                     </div>
@@ -460,7 +446,7 @@
     </main>
 
     <footer id="contact" class="pt-5 pb-5">
-        <div class="container">
+        <div class="container text-center">
             <h3>Get In Touch</h3>
             <p>I'm currently seeking internship opportunities for my Master's thesis (starting early 2026). <br> Let's build something innovative together.</p>
             <div class="social-links mb-3">
@@ -468,48 +454,13 @@
                 <a href="https://github.com/pratik001010" target="_blank" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
                 <a href="mailto:pratik010khadka@gmail.com" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="mb-0"><strong>Email:</strong> <a href="mailto:pratik010khadka@gmail.com" class="text-white text-decoration-none">pratik010khadka@gmail.com</a></p>
+            <p class="mb-0"><strong>Email:</strong> <a href="mailto:pratik010khadka@gmail.com" class="footer-link">pratik010khadka@gmail.com</a></p>
             <p class="mb-0"><strong>Phone:</strong> (+33) 782721215</p>
-            <p class="mt-3"><small>&copy; 2025 Pratik Khadka. All rights reserved.</small></p>
+            <p class="mt-4"><small>&copy; 2025 Pratik Khadka. All rights reserved.</small></p>
         </div>
     </footer>
 
     <script src="httpsS://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        const cursorDot = document.getElementById('cursor-dot');
-        
-        // Follow mouse movement
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-            
-            // Use top/left to move the dot
-            cursorDot.style.top = `${posY}px`;
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.opacity = '1';
-        });
-
-        // Hide dot when mouse leaves window
-        document.addEventListener('mouseleave', () => {
-             cursorDot.style.opacity = '0';
-        });
-        document.addEventListener('mouseenter', () => {
-             cursorDot.style.opacity = '1';
-        });
-
-        // Add hover effect for links
-        const links = document.querySelectorAll('a, .btn, button, .dropdown-item');
-        links.forEach(link => {
-            link.addEventListener('mouseenter', ()V => {
-                cursorDot.classList.add('hovered');
-            });
-            link.addEventListener('mouseleave', () => {
-                cursorDot.classList.remove('hovered');
-            });
-        });
-    });
-    </script>
     </body>
 </html>
