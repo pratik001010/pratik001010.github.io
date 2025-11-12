@@ -62,12 +62,12 @@
             color: #212529; /* Black for "Hi," */
         }
         
-        /* NEW: Style for "Welcome." */
+        /* --- UPDATED: Style for "Welcome." --- */
         .hero-title .welcome-text {
             font-family: 'Pacifico', cursive; /* Handwritten font */
             font-weight: 400; /* Pacifico is only 400 */
             
-            /* The Animated Gradient */
+            /* The Gradient */
             background-image: linear-gradient(
                 -45deg, 
                 #ee7752, /* Orange */
@@ -75,22 +75,24 @@
                 #23a6d5, /* Blue */
                 #23d5ab  /* Green */
             );
-            background-size: 300% 300%; /* Make gradient larger */
+            background-size: 300% 300%;
+            background-position: 0% 50%; /* Static gradient position */
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             
-            /* The Animation */
-            animation: gradient-flow 10s ease infinite;
+            /* The NEW Animation: Fade In/Out */
+            animation: fade-in-out 3s ease-in-out infinite;
         }
 
-        /* The Keyframe Animation */
-        @keyframes gradient-flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* The NEW Keyframe Animation */
+        @keyframes fade-in-out {
+            0%   { opacity: 1; }
+            50%  { opacity: 0; }
+            100% { opacity: 1; }
         }
-        
+        /* --- END OF UPDATE --- */
+
         .hero-section .lead {
             font-family: 'Poppins', sans-serif;
             font-size: 1.5rem;
@@ -256,7 +258,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#references">References</a>
                     </li>
-                    <li class="nav-item">
+                    <li class_ ="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -343,7 +345,7 @@
                             <div class="card-body">
                                 <h4 class="card-title text-center"><i class="fas fa-code card-title-icon"></i> Programming</h4>
                                 <hr>
-                                <div class="text-center">
+                                <div class_ ="text-center">
                                     <span class="badge bg-primary skill-badge">Baremetal-C, C++</span>
                                     <span class="badge bg-primary skill-badge">Python</span>
                                     <span class="badge bg-primary skill-badge">MATLAB</span>
