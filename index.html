@@ -1,1 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratik Khadka - IoT & Embedded Systems Engineer</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Wix+Madefor+Text:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Minimalist & Professional Stylesheet */
+        body {
+            font-family: 'Wix Madefor Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #212529;
+        }
+
+        /* --- 1. Navigation Bar --- */
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            background-color: #ffffff !important;
+        }
+        .navbar-brand {
+            font-family: 'Wix Madefor Text', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        .navbar-nav .nav-link {
+            font-family: 'Wix Madefor Text', sans-serif;
+            font-weight: 500;
+            color: #333;
+            transition: color 0.2s ease-in-out;
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #0d6efd !important;
+        }
+        .dropdown-item:hover {
+            color: #0d6efd;
+            background-color: #f8f9fa;
+        }
+
+        /* --- 2. HERO SECTION (UPDATED) --- */
+        .hero-section {
+            background-color: #f8f9fa;
+            padding: 100px 0;
+            text-align: left;
+        }
+        
+        .hero-title-container {
+            /* Use flexbox to align "Hi," and the GIF */
+            display: flex;
+            align-items: baseline; /* Aligns their bottoms */
+            flex-wrap: wrap; /* Allows wrap on small screens */
+            margin-bottom: 20px;
+        }
+
+        /* Font for "Hi," */
+        .hero-section h1.hero-title {
+            font-size: 7rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: #212529;
+            margin: 0;
+            margin-right: 1.5rem; /* Space between "Hi," and "Welcome" */
+        }
+        
+        /* NEW: Style for the "Welcome" GIF (made larger) */
+        .hero-title-container img {
+            height: 120px; /* Increased height */
+            width: 140px;  /* Increased width */
+            position: relative;
+            top: -10px; 
+        }
+
+        .hero-section .lead {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .hero-section h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #0d6efd;
+            margin-bottom: 25px;
+        }
+        .hero-section .summary {
+            font-size: 1.375rem; /* 22px */
+            max-width: 700px;
+            font-weight: 400;
+        }
+
+        /* --- 3. Global Section Styles --- */
+        section {
+            padding: 80px 0;
+        }
+        section h2.section-title {
+            font-weight: 700;
+            color: #0d6efd;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        #about h2.section-title {
+             text-align: left;
+        }
+        #skills h2.section-title,
+        #projects h2.section-title,
+        #education h2.section-title,
+        #references h2.section-title {
+            text-align: center;
+        }
+
+        /* --- 4. About Me Section --- */
+        #about p.lead {
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+        .about-img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* --- 5. Skills Section --- */
+        .skill-card {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border-radius: 8px;
+        }
+        .card-title-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #0d6efd;
+        }
+        .skill-badge {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 4px;
+        }
+
+        /* --- 6. Projects Section --- */
+        .project-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .project-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .project-item h3 {
+            font-weight: 600;
+        }
+        .project-item .btn {
+            font-weight: 500;
+        }
+
+        /* --- 7. Education & References --- */
+        #education, #references {
+            background-color: #f8f9fa; /* Light grey background */
+        }
+        .list-group-item, .card {
+            border-radius: 8px;
+        }
+        .list-group-item {
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: none;
+        }
+        .card .card-link {
+            text-decoration: none;
+        }
+
+        /* --- 8. Footer --- */
+        footer {
+            background-color: #343a40;
+            color: #ccc;
+            padding: 60px 0;
+        }
+        footer h3 {
+            font-weight: 600;
+            color: #fff;
+        }
+        footer .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 12px;
+            transition: color 0.3s ease;
+        }
+        footer .social-links a:hover {
+            color: #0d6efd;
+        }
+        footer .footer-link {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        footer .footer-link:hover {
+            color: #0d6efd;
+        }
+
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="70">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pratik Khadka</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#references">References</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+        <section class="hero-section" id="home">
+            <div class="container">
+                <div class="hero-title-container">
+                    <h1 class="hero-title">Hi,</h1>
+                    <img alt="Welcome" src="https://assets.zyrosite.com/A85D79Zw2bcZMGKK/animation_640_lfz3plng-A3QBGjQE4EUy2rNG.gif">
+                </div>
+                
+                <p class="lead">I'm Pratik Khadka.</p>
+                <h2>MSc Student in Embedded Intelligence & IoT Systems</h2>
+                <p class="summary">
+                    Passionate about transforming IoT technologies into innovative digital solutions for Smart Cities, Agriculture 4.0, and Sustainability.
+                </p>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h2 class="section-title">About Me</h2>
+                        <p class="lead">Erasmus Mundus MSc student in Embedded Intelligence and IoT Systems, passionate about transforming loT technologies into innovative digital solutions.</p>
+                        <p>My background combines embedded hardware experience with an interest in loT-driven business models, smart services, and data analytics.</p>
+                        <p>Experienced in STM32, ESP32, LoRaWAN, and Zigbee, I focus on connecting devices to cloud platforms for automation and insight generation. I am particularly interested in how loT can support digital innovation, sustainability, and the development of connected business ecosystems.</p>
+                        <p class="fw-bold">Currently in my 3rd semester at the University of Orléans, France, and actively seeking an internship for my 4th-semester thesis.</p>
+                    </div>
+                    <div class="col-lg-5 text-center d-none d-lg-block">
+                        <img src="https://via.placeholder.com/300/f8f9fa/ffffff?text=PK" alt="Pratik Khadka" class="about-img" style="border-radius: 8px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills" class="bg-light">
+            <div class="container">
+                <h2 class="section-title">Core Skills</h2>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100 skill-card">
+                            <div class="card-body">
+                                <h4 class="card-title text-center"><i class="fas fa-microchip card-title-icon"></i> Embedded Systems</h4>
+                                <hr>
+                                <div class="text-center">
+                                    <span class="badge bg-primary skill-badge">STM32 / ESP32</span>
+                                    <span class="badge bg-primary skill-badge">Arduino / Raspberry Pi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100 skill-card">
+                            <div class="card-body">
+                                <h4 class="card-title text-center"><i class="fas fa-wifi card-title-icon"></i> IoT Protocols</h4>
+                                <hr>
+                                <div class="text-center">
+                                    <span class="badge bg-primary skill-badge">LoRaWAN / Sigfox / Zigbee</span>
+                                    <span class="badge bg-primary skill-badge">MQTT / CoAP / WiFi</span>
+                                    <span class="badge bg-secondary skill-badge">CAN / FlexRay / I²C / SPI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100 skill-card">
+                            <div class="card-body">
+                                <h4 class="card-title text-center"><i class="fas fa-cloud card-title-icon"></i> Cloud Platforms</h4>
+                                <hr>
+                                <div class="text-center">
+                                    <span class="badge bg-primary skill-badge">AWS IoT Core</span>
+                                    <span class="badge bg-primary skill-badge">AWS Greengrass</span>
+                                    <span class="badge bg-primary skill-badge">Node-RED / Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100 skill-card">
+                            <div class="card-body">
+                                <h4 class="card-title text-center"><i class="fas fa-code card-title-icon"></i> Programming</h4>
+                                <hr>
+                                <div class="text-center">
+                                    <span class="badge bg-primary skill-badge">Baremetal-C, C++</span>
+                                    <span class="badge bg-primary skill-badge">Python</span>
+                                    <span class="badge bg-primary skill-badge">MATLAB</span>
+                                    <span class="badge bg-secondary skill-badge">Shell scripting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100 skill-card">
+                            <div class="card-body">
+                                <h4 class="card-title text-center"><i class="fas fa-project-diagram card-title-icon"></i> Simulation</h4>
+                                <hr>
+                                <div class="text-center">
+                                    <span class="badge bg-primary skill-badge">LTSpice / Proteus</span>
+                                    <span class="badge bg-primary skill-badge">Multisim / Keil µVision4</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100 skill-card">
+                            <div class="card-body">
+                                <h4 class="card-title text-center"><i class="fas fa-drafting-compass card-title-icon"></i> PCB & Mechanical</h4>
+                                <hr>
+                                <div class="text-center">
+                                    <span class="badge bg-primary skill-badge">Altinum Designer</span>
+                                    <span class="badge bg-primary skill-badge">SolidWorks / Fusion 360</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+
+                <div class="row project-item align-items-center">
+                    <div class="col-lg-5">
+                        <h3>LoRaWAN Indoor Path Loss Analysis</h3>
+                        <p class="text-muted">Investigates how environmental conditions affect LoRaWAN signal reliability in offices.</p>
+                    </div>
+                    <div class="col-lg-7">
+                        <p>Uses ML models (MLR, RF, XGBoost) on RSSI/SNR data to predict path loss and optimize spreading factors for improved energy efficiency and coverage.</p>
+                        <a href="https://github.com/pratik001010/LoRaWAN-in-Indoor-Office-Environments-Environmental-Effects-on-Path-Loss-and-Signal-Reliability" target="_blank" class="btn btn-outline-primary"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row project-item align-items-center">
+                    <div class="col-lg-5">
+                        <h3>Intelligent Home Automation System</h3>
+                        <p class="text-muted">Integrated system on Arduino Mega with biometric/RFID access, ESP32-CAM surveillance, and gas/fire detection.</p>
+                    </div>
+                    <div class="col-lg-7">
+                        <p>Features multi-mode control via IR remote and offline voice recognition (DFRobot Gravity module) enabled efficient, hands-free operation.</p>
+                        <a href="https://github.com/pratik001010/INTELLIGENT-HOME-SYSTEM-DESIGN-AND-IMPLEMENTATION" target="_blank" class="btn btn-outline-primary"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="row project-item align-items-center">
+                    <div class="col-lg-5">
+                        <h3>HEXAPOD ROBOT</h3>
+                        <p class="text-muted">A six-legged robot with 18 degrees of freedom (3 servos per leg) on an Arduino platform.</p>
+                    </div>
+                    <div class="col-lg-7">
+                        <p>Focuses on gait generation, balance control, and terrain adaptability using inverse kinematics algorithms for autonomous exploration and surveillance.</p>
+                        <a href="https://github.com/pratik001010/HEXAPOD-ROBOT" target="_blank" class="btn btn-outline-primary"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row project-item align-items-center">
+                    <div class="col-lg-5">
+                        <h3>Automated Beehive (Ongoing)</h3>
+                        <p class="text-muted">IoT-enabled "Agriculture 4.0" project for non-intrusive honey harvesting.</p>
+                    </div>
+                    <div class="col-lg-7">
+                        <p>Integrating optical sensors for honey levels, a stepper-motor system for frame splitting, 3D-printed honeyframes, and an IoT dashboard for remote monitoring.</p>
+                        <a href="httpsD://drive.google.com/drive/folders/1zwYiBB785atWlqGulmsrUbIPSQ-P2Hcg?usp=sharing" target="_blank" class="btn btn-outline-secondary"><i class="fas fa-folder-open"></i> View Concept</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <section id="education" class="bg-light">
+            <div class="container">
+                <h2 class="section-title">Education & Mobility</h2>
+                <ul class="list-group">
+                    <li class="list-group-item p-3">
+                        <h5 class="mb-1">Erasmus Mundus MSc in Embedded Intelligence (EMINENT)</h5>
+                        <p class="mb-1 text-muted">A multi-semester program across Europe.</p>
+                        <small>
+                            <strong>3rd Sem (IoT & Robotics):</strong> University of Orléans, France (Current) <br>
+                            <strong>2nd Sem (Sensors & Devices):</strong> University of Siegen, Germany <br>
+                            <strong>1st Sem (Functional Materials):</strong> Hellenic Mediterranean University, Greece
+                        </small>
+                    </li>
+                    <li class="list-group-item p-3">
+                        <h5 class="mb-1">B.Eng in Automation Technology</h5>
+                        <p class="mb-1 text-muted">Hainan Normal University, China</p>
+                        <small><strong>Thesis:</strong> Intelligent home system design and Implementation</small>
+                    </li>
+                    <li class="list-group-item p-3">
+                        <h5 class="mb-1">Diploma in Computer Engineering</h5>
+                        <p class="mb-1 text-muted">Pokhara Engineering College, Nepal</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="references">
+            <div class="container">
+                <h2 class="section-title">References</h2>
+                <div class="row">
+                    <div class="col-lg-4 mb-3">
+                        <div class="card h-100 skill-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Prof. Dr. Peter Haring Bolívar</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">EMINENT Director</h6>
+                                <p class="card-text">University of Siegen, Germany<br><a href="mailto:peter.haring@uni-siegen.de" class="card-link">peter.haring@uni-siegen.de</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="card h-100 skill-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Assoc. Prof. Dr. Raphaël Canals</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">EMINENT Program Coordinator</h6>
+                                <p class="card-text">University of Orléans, France<br><a href="mailto:raphael.canals@univ-orleans.fr" class="card-link">raphael.canals@univ-orleans.fr</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="card h-100 skill-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Prof. Wang Ying Pin</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Undergraduate Supervisor</h6>
+                                <p class="card-text">Hainan Normal University, China<br><a href="mailto:371510397@qq.com" class="card-link">371510397@qq.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="pt-5 pb-5">
+        <div class="container text-center">
+            <h3>Get In Touch</h3>
+            <p>I'm currently seeking internship opportunities for my Master's thesis (starting early 2026). <br> Let's build something innovative together.</p>
+            <div class="social-links mb-3">
+                <a href="https://www.linkedin.com/in/pratik-khadka-21837416a/" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/pratik001010" target="_blank" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:pratik010khadka@gmail.com" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="mb-0"><strong>Email:</strong> <a href="mailto:pratik010khadka@gmail.com" class="footer-link">pratik010khadka@gmail.com</a></p>
+            <p class="mb-0"><strong>Phone:</strong> (+33) 782721215</p>
+            <p class="mt-4"><small>&copy; 2025 Pratik Khadka. All rights reserved.</small></p>
+        </div>
+    </footer>
+
+    <script src="httpsS://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
