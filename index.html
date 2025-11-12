@@ -17,6 +17,12 @@
             /* HIDE THE DEFAULT CURSOR */
             cursor: none; 
         }
+        
+        /* Ensure all clickable items also hide the cursor */
+        a, button, .btn {
+            cursor: none;
+        }
+
         .navbar {
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
@@ -24,14 +30,16 @@
             font-weight: 700;
         }
 
+        /* --- UPDATED HERO SECTION WITH SMART CITY IMAGE --- */
         .hero-section {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1533425332312-58e63b65b716?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             color: white;
             padding: 100px 0;
             text-align: center;
         }
+        /* --- END OF UPDATE --- */
 
         .hero-section h1 {
             font-size: 3.5rem;
@@ -46,13 +54,6 @@
             font-weight: 600;
             padding: 12px 24px;
             font-size: 1.1rem;
-            /* Ensure cursor is hidden on buttons too */
-            cursor: none;
-        }
-        
-        /* Make links hide the cursor as well */
-        a {
-            cursor: none;
         }
         
         section {
@@ -109,22 +110,31 @@
             color: #2563eb;
         }
 
-        /* --- NEW: Custom Cursor Dot --- */
+        /* --- Custom Cursor Dot CSS --- */
         #cursor-dot {
             width: 8px;
             height: 8px;
             background-color: white;
             border-radius: 50%;
-            position: fixed;
-            top: 0;
-            left: 0;
+            position: fixed; /* Use fixed positioning */
             pointer-events: none; /* Lets you click through it */
             z-index: 9999;
             mix-blend-mode: difference; /* Inverts color! */
-            transition: transform 0.1s ease-out;
-            transform: translate(-100%, -100%); /* Start hidden */
+            
+            /* Start hidden off-screen */
+            top: -20px;
+            left: -20px;
+            opacity: 0;
+
+            /* Add transitions for smooth movement and scaling */
+            transition: transform 0.2s ease-out, top 0.1s ease-out, left 0.1s ease-out, opacity 0.1s ease-out;
         }
-        /* --- End of New CSS --- */
+        
+        /* NEW: This class will be added by JS on hover */
+        #cursor-dot.hovered {
+            transform: scale(3.5); /* Make the dot bigger */
+        }
+        /* --- End of Custom Cursor CSS --- */
 
     </style>
 </head>
@@ -452,7 +462,10 @@
         window.addEventListener('mousemove', (e) => {
             const posX = e.clientX;
             const posY = e.clientY;
-            cursorDot.style.transform = `translate(${posX}px, ${posY}px)`;
+            
+            // Use top/left to move the dot
+            cursorDot.style.top = `${posY}px`;
+            cursorDot.style.left = `${posX}px`;
             cursorDot.style.opacity = '1';
         });
 
@@ -462,6 +475,17 @@
         });
         document.addEventListener('mouseenter', () => {
              cursorDot.style.opacity = '1';
+        });
+
+        // Add hover effect for links
+        const links = document.querySelectorAll('a, .btn, button');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursorDot.classList.add('hovered');
+            });
+            link.addEventListener('mouseleave', () => {
+                cursorDot.classList.remove('hovered');
+            });
         });
     });
     </script>
