@@ -9,22 +9,17 @@
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
         /* Custom styles for a modern look */
         body {
-            /* NEW: Use the Poppins font */
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8f9fa;
             /* HIDE THE DEFAULT CURSOR */
             cursor: none; 
         }
         
         /* Ensure all clickable items also hide the cursor */
-        a, button, .btn, .dropdown-item {
+        a, button, .btn {
             cursor: none;
         }
 
@@ -32,25 +27,25 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         .navbar-brand {
-            font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            font-size: 1.25rem;
         }
         
-        /* --- NEW: NAVBAR FONT & GLOW EFFECT --- */
+        /* --- NEW: NAVBAR GLOW EFFECT --- */
         .navbar-nav .nav-link {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600; /* Bolder */
-            font-size: 1.05rem; /* More expressive */
-            color: #333;
-            letter-spacing: 0.5px;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
         }
 
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
             color: #2563eb !important; /* Force the blue color */
-            text-shadow: 0 0 12px rgba(37, 99, 235, 0.5); /* The "glow" */
+            transform: translateY(-2px); /* Lifts the text up slightly */
+            text-shadow: 0 0 10px rgba(37, 99, 235, 0.6); /* This is the "glow" */
+        }
+        
+        .dropdown-item {
+            transition: background-color 0.2s ease, color 0.2s ease;
+            cursor: none; /* Keep the custom cursor */
         }
         
         .dropdown-item:hover {
@@ -60,7 +55,6 @@
         /* --- END OF NEW CSS --- */
 
 
-        /* --- FIXED: HERO SECTION WITH SMART CITY IMAGE --- */
         .hero-section {
             background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1533425332312-58e63b65b716?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -71,7 +65,6 @@
         }
 
         .hero-section h1 {
-            font-family: 'Poppins', sans-serif;
             font-size: 3.5rem;
             font-weight: 700;
         }
@@ -81,7 +74,6 @@
             margin: 15px auto;
         }
         .hero-section .btn {
-            font-family: 'Poppins', sans-serif;
             font-weight: 600;
             padding: 12px 24px;
             font-size: 1.1rem;
@@ -91,7 +83,6 @@
             padding: 60px 0;
         }
         section h2.section-title {
-            font-family: 'Poppins', sans-serif;
             text-align: center;
             font-weight: 700;
             color: #2563eb;
@@ -113,7 +104,6 @@
             color: #2563eb;
         }
         .skill-badge {
-            font-family: 'Poppins', sans-serif;
             font-size: 0.9rem;
             font-weight: 600;
             margin: 4px;
@@ -142,11 +132,8 @@
         footer .social-links a:hover {
             color: #2563eb;
         }
-        footer h3, footer p {
-            font-family: 'Poppins', sans-serif;
-        }
 
-        /* --- FIXED: Custom Cursor Dot CSS --- */
+        /* --- Custom Cursor Dot CSS --- */
         #cursor-dot {
             width: 8px;
             height: 8px;
@@ -236,7 +223,7 @@
         <section id="about">
             <div class="container">
                 <h2 class="section-title">About Me</h2>
-                <div class="row align-items.center">
+                <div class="row align-items-center">
                     <div class="col-lg-4 text-center mb-4 mb-lg-0">
                         <img src="https://via.placeholder.com/350/2563eb/ffffff?text=PK" alt="Pratik Khadka" class="about-img">
                     </div>
@@ -274,7 +261,7 @@
                                 <div class="text-center">
                                     <span class="badge bg-primary skill-badge">LoRaWAN / Sigfox / Zigbee</span>
                                     <span class="badge bg-primary skill-badge">MQTT / CoAP / WiFi</span>
-                                    <span class="badge bg-secondary skill-badge">CAN / FlexRay / I²C / SPI</span>
+                                    <span classs="badge bg-secondary skill-badge">CAN / FlexRay / I²C / SPI</span>
                                 </div>
                             </div>
                         </div>
@@ -351,7 +338,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 project-card">
+                        <div classs="card h-100 project-card">
                             <img src="https://via.placeholder.com/400x250/343a40/ffffff?text=Smart+Home" class="card-img-top" alt="Smart Home Project">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Intelligent Home Automation System</h5>
@@ -396,7 +383,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100 project-card">
-                            <img src="httpsfs://via.placeholder.com/400x250/343a40/ffffff?text=ESP32-CAM" class="card-img-top" alt="ESP32-CAM Project">
+                            <img src="https://via.placeholder.com/400x250/343a40/ffffff?text=ESP32-CAM" class="card-img-top" alt="ESP32-CAM Project">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">ESP32-CAM Outdoor Surveillance</h5>
                                 <p class="card-text flex-grow-1">Developed an outdoor surveillance system with pan-tilt functionality, motion detection, and on-board video recording. Streams real-time video via a built-in web server.</p>
@@ -515,7 +502,7 @@
         // Add hover effect for links
         const links = document.querySelectorAll('a, .btn, button, .dropdown-item');
         links.forEach(link => {
-            link.addEventListener('mouseenter', () => {
+            link.addEventListener('mouseenter', ()V => {
                 cursorDot.classList.add('hovered');
             });
             link.addEventListener('mouseleave', () => {
