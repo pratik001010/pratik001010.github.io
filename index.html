@@ -11,12 +11,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:wght@700&family=Wix+Madefor+Text:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Wix+Madefor+Text:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         /* Minimalist & Professional Stylesheet */
         body {
-            /* NEW FONT: This is the main font from the inspiration site */
             font-family: 'Wix Madefor Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: #ffffff;
             color: #212529;
@@ -54,41 +53,39 @@
             text-align: left;
         }
         
-        /* NEW FONT: 'Playfair Display' for "Hi," */
-        .hero-section h1.hero-title {
-            font-size: 7rem; /* Large size like the example */
-            font-weight: 700;
+        /* Flex container to align "Hi," and GIF */
+        .hero-title-container {
+            display: flex;
+            align-items: center; /* Vertically align center */
             margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
-            color: #212529;
-        }
-        
-        /* NEW FONT: 'Caveat' for "Welcome." */
-        .hero-title .welcome-text {
-            font-family: 'Caveat', cursive; /* New handwritten font */
-            font-weight: 700;
-            font-size: 6.5rem; /* Matched size */
-            
-            /* The Gradient */
-            background-image: linear-gradient(
-                -45deg, 
-                #ee7752, #e73c7e, #23a6d5, #23d5ab
-            );
-            background-size: 300% 300%;
-            background-position: 0% 50%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            
-            /* The Fading Animation */
-            animation: fade-in-out 3s ease-in-out infinite;
+            flex-wrap: wrap; /* Allow wrapping on very small screens */
         }
 
-        /* The Keyframe Animation */
-        @keyframes fade-in-out {
-            0%   { opacity: 1; }
-            50%  { opacity: 0; }
-            100% { opacity: 1; }
+        /* "Hi," Text */
+        .hero-title-text {
+            font-size: 7rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: #212529;
+            margin-right: 20px; /* Space between Hi and GIF */
+            line-height: 1;
+        }
+        
+        /* The Welcome GIF */
+        .welcome-gif {
+            height: 120px; /* Adjust height to match text size */
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Responsive adjustment for mobile */
+        @media (max-width: 768px) {
+            .hero-title-text {
+                font-size: 4rem;
+            }
+            .welcome-gif {
+                height: 70px;
+            }
         }
         
         .hero-section .lead {
@@ -102,9 +99,8 @@
             color: #0d6efd;
             margin-bottom: 25px;
         }
-        /* NEW FONT SIZE: Matching the example's body text */
         .hero-section .summary {
-            font-size: 1.375rem; /* 22px */
+            font-size: 1.375rem;
             max-width: 700px;
             font-weight: 400;
         }
@@ -123,14 +119,12 @@
         #about h2.section-title {
              text-align: left;
         }
-        /* Center titles for other sections */
         #skills h2.section-title,
         #projects h2.section-title,
         #education h2.section-title,
         #references h2.section-title {
             text-align: center;
         }
-
 
         /* --- 4. About Me Section --- */
         #about p.lead {
@@ -183,7 +177,7 @@
 
         /* --- 7. Education & References --- */
         #education, #references {
-            background-color: #f8f9fa; /* Light grey background */
+            background-color: #f8f9fa;
         }
         .list-group-item, .card {
             border-radius: 8px;
@@ -267,9 +261,12 @@
         
         <section class="hero-section" id="home">
             <div class="container">
-                <h1 class="hero-title">
-                  Hi, <span class="welcome-text">Welcome.</span>
-                </h1>
+                
+                <div class="hero-title-container">
+                    <div class="hero-title-text">Hi,</div>
+                    <img src="https://assets.zyrosite.com/A85D79Zw2bcZMGKK/animation_640_lfz3plng-A3QBGjQE4EUy2rNG.gif" alt="Welcome Animation" class="welcome-gif">
+                </div>
+
                 <p class="lead">I'm Pratik Khadka.</p>
                 <h2>MSc Student in Embedded Intelligence & IoT Systems</h2>
                 <p class="summary">
@@ -439,7 +436,7 @@
                 <ul class="list-group">
                     <li class="list-group-item p-3">
                         <h5 class="mb-1">Erasmus Mundus MSc in Embedded Intelligence (EMINENT)</h5>
-                        <p class_ ="mb-1 text-muted">A multi-semester program across Europe.</p>
+                        <p class="mb-1 text-muted">A multi-semester program across Europe.</p>
                         <small>
                             <strong>3rd Sem (IoT & Robotics):</strong> University of Orléans, France (Current) <br>
                             <strong>2nd Sem (Sensors & Devices):</strong> University of Siegen, Germany <br>
@@ -451,7 +448,7 @@
                         <p class="mb-1 text-muted">Hainan Normal University, China</p>
                         <small><strong>Thesis:</strong> Intelligent home system design and Implementation</small>
                     </li>
-                    <li class="list-group-item p-3">
+                    <li class.list-group-item p-3">
                         <h5 class="mb-1">Diploma in Computer Engineering</h5>
                         <p class="mb-1 text-muted">Pokhara Engineering College, Nepal</p>
                     </li>
