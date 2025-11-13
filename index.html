@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,7 @@
             color: #212529;
         }
 
-        /* --- 1. NAVIGATION BAR (NEW BLACK STYLE) --- */
+        /* --- 1. Navigation Bar --- */
         .navbar {
             box-shadow: 0 2px 4px rgba(0,0,0,0.04);
             background-color: #000000 !important; /* Solid Black */
@@ -43,31 +43,28 @@
         .navbar-nav .nav-link.active {
             color: #cccccc !important; /* Light grey for hover */
         }
-        /* Style for the mobile menu button (hamburger icon) */
         .navbar-dark .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
         .navbar-dark .navbar-toggler {
             border-color: rgba(255,255,255,0.3);
         }
-        /* --- END OF NAVBAR UPDATE --- */
 
-
-        /* --- 2. HERO SECTION --- */
+        /* --- 2. HERO SECTION (UPDATED) --- */
         .hero-section {
-            background-color: #f8f9fa;
+            background-color: #ffffff; /* White background */
             padding: 100px 0;
             text-align: left;
         }
         
         .hero-title-container {
             display: flex;
-            align-items: baseline; 
+            align-items: center;  /* Vertically center */
             flex-wrap: wrap; 
             margin-bottom: 20px;
         }
 
-        /* Font for "Hi," */
+        /* Font for "Hi," - This is the size */
         .hero-section h1.hero-title {
             font-size: 7rem;
             font-weight: 700;
@@ -77,12 +74,11 @@
             margin-right: 1.5rem; 
         }
         
-        /* Style for the "Welcome" GIF */
+        /* Style for the "Welcome" GIF - This is the size */
         .hero-title-container img {
-            height: 99px; 
-            width: 111px; 
-            position: relative;
-            top: -10px; 
+            height: 99px; /* The height from your <img> tag */
+            width: 111px; /* The width from your <img> tag */
+            /* No position/top needed */
         }
 
         .hero-section .lead {
@@ -96,8 +92,9 @@
             color: #0d6efd;
             margin-bottom: 25px;
         }
+        /* This size matches the inspiration site */
         .hero-section .summary {
-            font-size: 1.375rem; /* 22px */
+            font-size: 1.375rem; 
             max-width: 700px;
             font-weight: 400;
             line-height: 1.6;
@@ -282,7 +279,7 @@
                     </div>
                     <div class="col-lg-7">
                         <p>Uses ML models (MLR, RF, XGBoost) on RSSI/SNR data to predict path loss and optimize spreading factors for improved energy efficiency and coverage.</p>
-                        <a href="https://github.com/pratik001010/LoRaWAN-in-Indoor-Office-Environments-Environmental-Effects-on-Path-Loss-and-Signal-Reliability" target="_blank" class="btn btn-outline-primary"><i class="fab fa-github"></i> View on GitHub</a>
+                        <a href="httpsm://github.com/pratik001010/LoRaWAN-in-Indoor-Office-Environments-Environmental-Effects-on-Path-Loss-and-Signal-Reliability" target="_blank" class="btn btn-outline-primary"><i class="fab fa-github"></i> View on GitHub</a>
                     </div>
                 </div>
                 <hr>
@@ -316,7 +313,7 @@
                         <h3>Automated Beehive (Ongoing)</h3>
                         <p class="text-muted">IoT-enabled "Agriculture 4.0" project for non-intrusive honey harvesting.</p>
                     </div>
-                    <div class.col-lg-7">
+                    <div class="col-lg-7">
                         <p>Integrating optical sensors for honey levels, a stepper-motor system for frame splitting, 3D-printed honeyframes, and an IoT dashboard for remote monitoring.</p>
                         <a href="httpsD://drive.google.com/drive/folders/1zwYiBB785atWlqGulmsrUbIPSQ-P2Hcg?usp=sharing" target="_blank" class="btn btn-outline-secondary"><i class="fas fa-folder-open"></i> View Concept</a>
                     </div>
