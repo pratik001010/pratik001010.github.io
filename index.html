@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,29 +21,39 @@
             color: #212529;
         }
 
-        /* --- 1. Navigation Bar --- */
+        /* --- 1. NAVIGATION BAR (NEW BLACK STYLE) --- */
         .navbar {
             box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-            background-color: #ffffff !important;
+            background-color: #000000 !important; /* Solid Black */
         }
         .navbar-brand {
             font-family: 'Wix Madefor Text', sans-serif;
             font-weight: 700;
             font-size: 1.25rem;
+            color: #ffffff !important; /* White text */
         }
         .navbar-nav .nav-link {
             font-family: 'Wix Madefor Text', sans-serif;
             font-weight: 500;
-            color: #333;
+            color: #ffffff !important; /* White text */
             transition: color 0.2s ease-in-out;
             padding: 0.5rem 1rem;
         }
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
-            color: #0d6efd !important;
+            color: #cccccc !important; /* Light grey for hover */
         }
+        /* Style for the mobile menu button (hamburger icon) */
+        .navbar-dark .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        .navbar-dark .navbar-toggler {
+            border-color: rgba(255,255,255,0.3);
+        }
+        /* --- END OF NAVBAR UPDATE --- */
 
-        /* --- 2. HERO SECTION (UPDATED) --- */
+
+        /* --- 2. HERO SECTION --- */
         .hero-section {
             background-color: #f8f9fa;
             padding: 100px 0;
@@ -187,7 +197,7 @@
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="70">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" id="mainNavbar">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNavbar">
         <div class="container">
             <a class="navbar-brand" href="#">Pratik Khadka</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -306,7 +316,7 @@
                         <h3>Automated Beehive (Ongoing)</h3>
                         <p class="text-muted">IoT-enabled "Agriculture 4.0" project for non-intrusive honey harvesting.</p>
                     </div>
-                    <div class="col-lg-7">
+                    <div class.col-lg-7">
                         <p>Integrating optical sensors for honey levels, a stepper-motor system for frame splitting, 3D-printed honeyframes, and an IoT dashboard for remote monitoring.</p>
                         <a href="httpsD://drive.google.com/drive/folders/1zwYiBB785atWlqGulmsrUbIPSQ-P2Hcg?usp=sharing" target="_blank" class="btn btn-outline-secondary"><i class="fas fa-folder-open"></i> View Concept</a>
                     </div>
@@ -327,6 +337,7 @@
                     <p class="mb-0"><strong>Phone:</strong> <a href="tel:+33782721215" class="footer-link">(+33) 782721215</a></p>
                 </div>
                 <div class="col-lg-6 text-center text-lg-end align-self-center">
+                    <h3 class="mb-3">Find Me On</h3>
                     <div class="social-links mb-3">
                         <a href="https://www.linkedin.com/in/pratik-khadka-21837416a/" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/pratik001010" target="_blank" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
