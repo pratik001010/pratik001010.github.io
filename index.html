@@ -19,7 +19,7 @@
             font-family: 'Wix Madefor Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: #ffffff;
             color: #212529;
-            /* Default cursor is now visible */
+            /* Default cursor is visible */
         }
 
         /* --- 1. Navigation Bar --- */
@@ -27,11 +27,14 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.04);
             background-color: #000000 !important; /* Solid Black */
         }
-        .navbar-brand {
-            font-family: 'Wix Madefor Text', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: #ffffff !important; /* White text */
+        /* Navbar logo for your image with blue border */
+        .navbar-brand .navbar-profile-pic {
+            height: 35px; /* Adjust size as needed */
+            width: 35px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid #0d6efd; /* Blue border */
         }
         .navbar-nav .nav-link {
             font-family: 'Wix Madefor Text', sans-serif;
@@ -51,7 +54,7 @@
             border-color: rgba(255,255,255,0.3);
         }
 
-        /* --- 2. HERO SECTION (UPDATED) --- */
+        /* --- 2. HERO SECTION --- */
         .hero-section {
             background-color: #ffffff; /* White background */
             padding: 100px 0 80px 0; /* Adjusted padding */
@@ -60,6 +63,7 @@
         
         .hero-title-container {
             display: flex;
+            justify-content: center; /* Center "Hi, Welcome" */
             align-items: center;  /* Vertically center */
             flex-wrap: wrap; 
             margin-bottom: 20px;
@@ -75,54 +79,75 @@
             margin-right: 1.5rem; 
         }
         
-        /* Style for the "Welcome" GIF - Made 300% bigger */
-        .hero-title-container img {
+        /* Style for the "Welcome" GIF - 300% bigger */
+        .hero-title-container .welcome-gif {
             height: 297px; /* 99px * 3 */
             width: 333px;  /* 111px * 3 */
+        }
+
+        /* Container for the profile picture */
+        .profile-pic-container {
+            width: 100%; /* Take full width */
+            text-align: center; /* Center the image */
+            margin-top: 30px; /* Space below "Hi, Welcome" */
+            margin-bottom: 30px; /* Space above "I'm Pratik Khadka" */
+        }
+
+        /* Style for your profile picture in hero */
+        .hero-profile-pic {
+            height: 350px; /* Bigger */
+            width: 350px; /* Bigger */
+            object-fit: cover;
+            border-radius: 50%; /* Make it circular */
+            border: 4px solid #0d6efd; /* Blue border */
         }
 
         .hero-section .lead {
             font-size: 1.5rem;
             font-weight: 500;
             margin-bottom: 10px;
+            text-align: center;
         }
         .hero-section h2 {
             font-size: 1.5rem;
             font-weight: 400;
             color: #0d6efd;
             margin-bottom: 25px;
+            text-align: center;
         }
         .hero-section .summary {
             font-size: 1.375rem; /* 22px */
             max-width: 700px;
             font-weight: 400;
             line-height: 1.6;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* --- SCROLLING KEYWORD BANNER --- */
+        /* --- SCROLLING LOGO BANNER --- */
         .scrolling-banner {
             overflow: hidden;
-            padding: 1rem 0;
-            background-color: #ffffff; /* White background */
+            padding: 1.5rem 0; /* More vertical space */
+            background-color: #ffffff;
             white-space: nowrap;
             border-top: 1px solid #e9ecef;
             border-bottom: 1px solid #e9ecef;
         }
         .scrolling-banner-track {
             display: inline-block;
-            animation: scroll 30s linear infinite;
+            animation: scroll-logos 40s linear infinite; /* Slower for logos */
         }
-        .keyword-tag {
-            display: inline-block;
-            background-color: #000000; /* Black tag */
-            color: #ffffff; /* White text */
-            border: 1px solid #000000; /* Black border */
-            padding: 0.5rem 1.5rem;
-            margin: 0 0.5rem;
-            border-radius: 20px;
-            font-weight: 700; /* Bold text */
+        .scrolling-banner-track img {
+            height: 50px; /* Clean, uniform height */
+            margin: 0 20px; /* Spacing */
+            vertical-align: middle;
+            transition: transform 0.2s ease-in-out;
         }
-        @keyframes scroll {
+        .scrolling-banner-track img:hover {
+            transform: scale(1.25); /* Zoom effect */
+        }
+        @keyframes scroll-logos {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
@@ -134,13 +159,13 @@
             padding: 80px 0;
         }
         section h2.section-title {
-            font-family: 'Wix Madefor Text', sans-serif;
+            font-family: 'Playfair Display', serif; /* Stylish font */
             font-weight: 700;
             color: #0d6efd;
             margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1.25rem;
+            text-transform: none; /* No more uppercase */
+            letter-spacing: 0;
+            font-size: 2.5rem; /* Bigger */
         }
         #about h2.section-title,
         #projects h2.section-title,
@@ -154,12 +179,17 @@
             line-height: 1.7;
         }
         #about h3 {
-            font-family: 'Wix Madefor Text', sans-serif;
-            font-weight: 600;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #0d6efd; /* Blue color */
+            font-size: 1.75rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 10px;
         }
-        /* NEW: Style for Education Links */
+        
+        /* Style for Education Links */
         .edu-link {
             text-decoration: none;
             color: #212529; /* Black text */
@@ -259,7 +289,9 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNavbar">
         <div class="container">
-            <a class="navbar-brand" href="#">Pratik Khadka</a>
+            <a class="navbar-brand" href="#">
+                <img alt="Pratik Khadka" class="navbar-profile-pic" src="https://raw.githubusercontent.com/pratik001010/pratik001010/d37b4f21a74715def19ad06f61a927fce66c1e81/pratika.PNG">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -283,14 +315,18 @@
         
         <section class="hero-section" id="home">
             <div class="container">
-                <div class="hero-title-container">
+                <div class="hero-title-container justify-content-center">
                     <h1 class="hero-title">Hi,</h1>
-                    <img alt="Welcome" src="https://assets.zyrosite.com/A85D79Zw2bcZMGKK/animation_640_lfz3plng-A3QBGjQE4EUy2rNG.gif">
+                    <img alt="Welcome" class="welcome-gif" src="https://assets.zyrosite.com/A85D79Zw2bcZMGKK/animation_640_lfz3plng-A3QBGjQE4EUy2rNG.gif">
                 </div>
                 
-                <p class="lead">I'm Pratik Khadka.</p>
-                <h2 class="mb-4">MSc Student in Embedded Intelligence & IoT Systems</h2>
-                <p class="summary">
+                <div class="profile-pic-container">
+                    <img alt="Pratik Khadka" class="hero-profile-pic" src="https://raw.githubusercontent.com/pratik001010/pratik001010/d37b4f21a74715def19ad06f61a927fce66c1e81/pratika.PNG">
+                </div>
+
+                <p class="lead text-center">I'm Pratik Khadka.</p>
+                <h2 class="mb-4 text-center">MSc Student in Embedded Intelligence & IoT Systems</h2>
+                <p class="summary text-center mx-auto">
                     Passionate about transforming IoT technologies into innovative digital solutions for Smart Cities, Agriculture 4.0, and Sustainability.
                 </p>
             </div>
@@ -298,34 +334,45 @@
 
         <div class="scrolling-banner">
             <div class="scrolling-banner-track">
-                <span class="keyword-tag">LoRaWAN</span>
-                <span class="keyword-tag">STM32</span>
-                <span class="keyword-tag">Embedded Systems</span>
-                <span class="keyword-tag">ESP32</span>
-                <span class="keyword-tag">IoT</span>
-                <span class="keyword-tag">AWS IoT</span>
-                <span class="keyword-tag">Agriculture 4.0</span>
-                <span class="keyword-tag">Smart Cities</span>
-                <span class="keyword-tag">Zigbee</span>
-                <span class="keyword-tag">C++</span>
-                <span class="keyword-tag">Python</span>
-                <span class="keyword-tag">CAN Bus</span>
+                <img alt="Arduino" src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" />
+                <img alt="STM32" src="https://raw.githubusercontent.com/STMicroelectronics/.github/311e6372d0fccf4bb17769da319b2bac525ffd43/profile/images/st-logo.svg" />
+                <img alt="AWS" src="https://cdn.worldvectorlogo.com/logos/aws-2.svg" />
+                <img alt="Python" src="https://cdn.worldvectorlogo.com/logos/python-5.svg" />
+                <img alt="C" src="https://cdn.worldvectorlogo.com/logos/c-1.svg" />
+                <img alt="TensorFlow" src="https://cdn.worldvectorlogo.com/logos/tensorflow-2.svg" />
+                <img alt="Node-RED" src="https://cdn.worldvectorlogo.com/logos/node-red-1.svg" />
+                <img alt="MQTT" style="height: 40px;" src="https://github.com/mqtt/mqttorg-graphics/blob/master/mqtt-logo-250.png?raw=true" />
+                <img alt="MATLAB" src="https://cdn.worldvectorlogo.com/logos/matlab.svg" />
+                <img alt="OpenCV" src="https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg" />
+                <img alt="Docker" src="https://cdn.worldvectorlogo.com/logos/docker.svg" />
+                <img alt="LoRaWAN" style="height: 40px;" src="https://images.seeklogo.com/logo-png/42/1/lorawan-logo-png_seeklogo-428968.png" />
+                <img alt="Raspberry Pi" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/raspberry-pi.svg" />
+                <img alt="Visual Studio" style="height: 40px;" src="https://visualstudio.microsoft.com/wp-content/uploads/2021/10/Product-Icon.svg" />
+                <img alt="Zigbee" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/zigbee.svg" />
+                <img alt="Sigfox" style="height: 40px;" src="https://upload.wikimedia.org/wikipedia/fr/thumb/7/73/Sigfox_logo.svg/600px-Sigfox_logo.svg.png?20161119100517" />
+                <img alt="Bluetooth" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/bluetooth.svg" />
+                <img alt="NFC" style="height: 40px;" src="https://i.fbcd.co/products/resized/resized-1500-1000/2490-dd9fd6ad4e0db46fa7e919dd2abfd27f82ca9dd45705ad76dc14186c9c37de2e.webp" />
                 
-                <span class="keyword-tag">LoRaWAN</span>
-                <span class="keyword-tag">STM32</span>
-                <span class="keyword-tag">Embedded Systems</span>
-                <span class="keyword-tag">ESP32</span>
-                <span class="keyword-tag">IoT</span>
-                <span class="keyword-tag">AWS IoT</span>
-                <span class="keyword-tag">Agriculture 4.0</span>
-                <span class="keyword-tag">Smart Cities</span>
-                <span class="keyword-tag">Zigbee</span>
-                <span class="keyword-tag">C++</span>
-                <span class="keyword-tag">Python</span>
-                <span class="keyword-tag">CAN Bus</span>
+                <img alt="Arduino" src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" />
+                <img alt="STM32" src="https://raw.githubusercontent.com/STMicroelectronics/.github/311e6372d0fccf4bb17769da319b2bac525ffd43/profile/images/st-logo.svg" />
+                <img alt="AWS" src="https://cdn.worldvectorlogo.com/logos/aws-2.svg" />
+                <img alt="Python" src="https://cdn.worldvectorlogo.com/logos/python-5.svg" />
+                <img alt="C" src="https://cdn.worldvectorlogo.com/logos/c-1.svg" />
+                <img alt="TensorFlow" src="https://cdn.worldvectorlogo.com/logos/tensorflow-2.svg" />
+                <img alt="Node-RED" src="https://cdn.worldvectorlogo.com/logos/node-red-1.svg" />
+                <img alt="MQTT" style="height: 40px;" src="https://github.com/mqtt/mqttorg-graphics/blob/master/mqtt-logo-250.png?raw=true" />
+                <img alt="MATLAB" src="https://cdn.worldvectorlogo.com/logos/matlab.svg" />
+                <img alt="OpenCV" src="https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg" />
+                <img alt="Docker" src="https://cdn.worldvectorlogo.com/logos/docker.svg" />
+                <img alt="LoRaWAN" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/lorawan-1.svg" />
+                <img alt="Raspberry Pi" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/raspberry-pi.svg" />
+                <img alt="Visual Studio" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/visual-studio-code.svg" />
+                <img alt="Zigbee" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/zigbee.svg" />
+                <img alt="Sigfox" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/sigfox.svg" />
+                <img alt="Bluetooth" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/bluetooth.svg" />
+                <img alt="NFC" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/nfc-5.svg" />
             </div>
         </div>
-        
         <section id="about">
             <div class="container">
                 <div class="row">
@@ -338,40 +385,45 @@
 
                         <h3>My Approach</h3>
                         <p>My approach focuses on the full stack of IoT development, from low-level hardware integration to cloud-based data analysis. I enjoy iterating on prototypes, collaborating with cross-functional teams, and striving to create products that have a real, positive impact on their users and the environment.</p>
-                    </div>
-
+                        
+                        <h3>Fun Fact</h3>
+                        <blockquote class="blockquote fst-italic">
+                            <p>"I love hiking, traveling, and building things that make life smarter."</p>
+                        </blockquote>
+                        </div>
+                    
                     <div class="col-lg-4">
                         <h2 class="section-title">Education</h2>
                         <ul class="list-unstyled">
                             <li class="mb-3">
                                 <h5 class="fw-bold mb-0">
-                                    <a href="https://eminent-master.eu/curriculum-degree/" target="_blank" class="edu-link">MSc in Embedded Intelligence (EMINENT)</a>
+                                    <a href="https://eminent-master.eu/curriculum-degree/" target="_blank" class="edu-link">MSc in Embedded Intelligence & Nano Systems Engineering (EMINENT)</a>
                                 </h5>
                                 <p class="mb-1 text-muted">Erasmus Mundus Joint Master Degree</p>
                                 <small class="text-muted d-block mt-1">
                                     <strong>3rd Sem (IoT & Robotics):</strong><br>
-                                    University of Orléans, France
+                                    <a href="https://www.univ-orleans.fr/en" target="_blank" class="edu-link">University of Orléans, France</a>
                                 </small>
                                 <small class="text-muted d-block mt-1">
                                     <strong>2nd Sem (Sensors & Devices):</strong><br>
-                                    University of Siegen, Germany
+                                    <a href="httpsis://www.uni-siegen.de/" target="_blank" class="edu-link">University of Siegen, Germany</a>
                                 </small>
                                 <small class="text-muted d-block mt-1">
                                     <strong>1st Sem (Functional Materials):</strong><br>
-                                    Hellenic Mediterranean University, Greece
+                                    <a href="http://hmu.gr/en/home/" target="_blank" class="edu-link">Hellenic Mediterranean University, Greece</a>
                                 </small>
                             </li>
                             <li class="mb-3">
-                                <h5 class="fw-bold mb-0">
-                                    <a href="https://eng.hainnu.edu.cn/" target="_blank" class="edu-link">B.Eng in Automation Technology</a>
-                                </h5>
-                                <p class="mb-0 text-muted">Hainan Normal University, China</p>
+                                <h5 class="fw-bold mb-0">B.Eng in Automation Technology</h5>
+                                <p class="mb-0 text-muted">
+                                    <a href="https://eng.hainnu.edu.cn/" target="_blank" class="edu-link">Hainan Normal University (海南师范大学)</a>, China
+                                </p>
                             </li>
                             <li>
-                                <h5 class="fw-bold mb-0">
-                                    <a href="https://pec.edu.np/" target="_blank" class="edu-link">Diploma in Computer Engineering</a>
-                                </h5>
-                                <p class="mb-0 text-muted">Pokhara Engineering College, Nepal</p>
+                                <h5 class="fw-bold mb-0">Diploma in Computer Engineering</h5>
+                                <p class="mb-0 text-muted">
+                                    <a href="https::/pec.edu.np/" target="_blank" class="edu-link">Pokhara Engineering College (पोखरा इन्जिनियरिङ क्याम्पस)</a>, Nepal
+                                </p>
                             </li>
                         </ul>
                     </div>
@@ -390,7 +442,7 @@
                     </div>
                     <div class="col-lg-7">
                         <p>Uses ML models (MLR, RF, XGBoost) on RSSI/SNR data to predict path loss and optimize spreading factors for improved energy efficiency and coverage.</p>
-                        <a href="httpsm://github.com/pratik001010/LoRaWAN-in-Indoor-Office-Environments-Environmental-Effects-on-Path-Loss-and-Signal-Reliability" target="_blank" class="btn btn-outline-primary"><i class="fab fa-github"></i> View on GitHub</a>
+                        <a href="https://github.com/pratik001010/LoRaWAN-in-Indoor-Office-Environments-Environmental-Effects-on-Path-Loss-and-Signal-Reliability" target="_blank" class="btn btn-outline-primary"><i class="fab fa-github"></i> View on GitHub</a>
                     </div>
                 </div>
                 <hr>
@@ -426,7 +478,7 @@
                     </div>
                     <div class="col-lg-7">
                         <p>Integrating optical sensors for honey levels, a stepper-motor system for frame splitting, 3D-printed honeyframes, and an IoT dashboard for remote monitoring.</p>
-                        <a href="httpsD://drive.google.com/drive/folders/1zwYiBB785atWlqGulmsrUbIPSQ-P2Hcg?usp=sharing" target="_blank" class="btn btn-outline-secondary"><i class="fas fa-folder-open"></i> View Concept</a>
+                        <a href="https://drive.google.com/drive/folders/1zwYiBB785atWlqGulmsrUbIPSQ-P2Hcg?usp=sharing" target="_blank" class="btn btn-outline-secondary"><i class="fas fa-folder-open"></i> View Concept</a>
                     </div>
                 </div>
 
@@ -447,7 +499,7 @@
                 <div class="col-lg-6 text-center text-lg-end align-self-center">
                     <h3 class="mb-3">Find Me On</h3>
                     <div class="social-links mb-3">
-                        <a href="https://www.linkedin.com/in/pratik-khadka-21837416a/" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="httpss://www.linkedin.com/in/pratik-khadka-21837416a/" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/pratik001010" target="_blank" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
                     </div>
                     <p class="mt-4"><small>&copy; 2025 Pratik Khadka. All rights reserved.</small></p>
@@ -456,7 +508,7 @@
         </div>
     </footer>
 
-    <script src="httpsS://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <script>
     document.addEventListener('DOMContentLoaded', (event) => {
