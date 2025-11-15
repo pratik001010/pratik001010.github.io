@@ -54,7 +54,7 @@
         /* --- 2. HERO SECTION (UPDATED) --- */
         .hero-section {
             background-color: #ffffff; /* White background */
-            padding: 100px 0;
+            padding: 100px 0 80px 0; /* Adjusted padding */
             text-align: left;
         }
         
@@ -99,6 +99,36 @@
             line-height: 1.6;
         }
 
+        /* --- SCROLLING KEYWORD BANNER --- */
+        .scrolling-banner {
+            overflow: hidden;
+            padding: 1rem 0;
+            background-color: #ffffff; /* White background */
+            white-space: nowrap;
+            border-top: 1px solid #e9ecef;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .scrolling-banner-track {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+        }
+        .keyword-tag {
+            display: inline-block;
+            background-color: #000000; /* Black tag */
+            color: #ffffff; /* White text */
+            border: 1px solid #000000; /* Black border */
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 20px;
+            font-weight: 700; /* Bold text */
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        /* --- END OF BANNER CSS --- */
+
+
         /* --- 3. Global Section Styles --- */
         section {
             padding: 80px 0;
@@ -128,6 +158,15 @@
             font-weight: 600;
             margin-top: 2rem;
             margin-bottom: 1rem;
+        }
+        /* NEW: Style for Education Links */
+        .edu-link {
+            text-decoration: none;
+            color: #212529; /* Black text */
+        }
+        .edu-link:hover {
+            color: #0d6efd; /* Blue on hover */
+            text-decoration: underline;
         }
         
         /* --- 5. Projects Section --- */
@@ -257,6 +296,36 @@
             </div>
         </section>
 
+        <div class="scrolling-banner">
+            <div class="scrolling-banner-track">
+                <span class="keyword-tag">LoRaWAN</span>
+                <span class="keyword-tag">STM32</span>
+                <span class="keyword-tag">Embedded Systems</span>
+                <span class="keyword-tag">ESP32</span>
+                <span class="keyword-tag">IoT</span>
+                <span class="keyword-tag">AWS IoT</span>
+                <span class="keyword-tag">Agriculture 4.0</span>
+                <span class="keyword-tag">Smart Cities</span>
+                <span class="keyword-tag">Zigbee</span>
+                <span class="keyword-tag">C++</span>
+                <span class="keyword-tag">Python</span>
+                <span class="keyword-tag">CAN Bus</span>
+                
+                <span class="keyword-tag">LoRaWAN</span>
+                <span class="keyword-tag">STM32</span>
+                <span class="keyword-tag">Embedded Systems</span>
+                <span class="keyword-tag">ESP32</span>
+                <span class="keyword-tag">IoT</span>
+                <span class="keyword-tag">AWS IoT</span>
+                <span class="keyword-tag">Agriculture 4.0</span>
+                <span class="keyword-tag">Smart Cities</span>
+                <span class="keyword-tag">Zigbee</span>
+                <span class="keyword-tag">C++</span>
+                <span class="keyword-tag">Python</span>
+                <span class="keyword-tag">CAN Bus</span>
+            </div>
+        </div>
+        
         <section id="about">
             <div class="container">
                 <div class="row">
@@ -270,25 +339,43 @@
                         <h3>My Approach</h3>
                         <p>My approach focuses on the full stack of IoT development, from low-level hardware integration to cloud-based data analysis. I enjoy iterating on prototypes, collaborating with cross-functional teams, and striving to create products that have a real, positive impact on their users and the environment.</p>
                     </div>
+
                     <div class="col-lg-4">
                         <h2 class="section-title">Education</h2>
                         <ul class="list-unstyled">
                             <li class="mb-3">
-                                <h5 class="fw-bold mb-0">MSc in Embedded Intelligence (EMINENT)</h5>
-                                <p class="mb-0 text-muted">Erasmus Mundus Joint Master Degree</p>
-                                <small class="text-muted">Greece &rarr; Germany &rarr; France</small>
+                                <h5 class="fw-bold mb-0">
+                                    <a href="https://eminent-master.eu/curriculum-degree/" target="_blank" class="edu-link">MSc in Embedded Intelligence (EMINENT)</a>
+                                </h5>
+                                <p class="mb-1 text-muted">Erasmus Mundus Joint Master Degree</p>
+                                <small class="text-muted d-block mt-1">
+                                    <strong>3rd Sem (IoT & Robotics):</strong><br>
+                                    University of Orléans, France
+                                </small>
+                                <small class="text-muted d-block mt-1">
+                                    <strong>2nd Sem (Sensors & Devices):</strong><br>
+                                    University of Siegen, Germany
+                                </small>
+                                <small class="text-muted d-block mt-1">
+                                    <strong>1st Sem (Functional Materials):</strong><br>
+                                    Hellenic Mediterranean University, Greece
+                                </small>
                             </li>
                             <li class="mb-3">
-                                <h5 class="fw-bold mb-0">B.Eng in Automation Technology</h5>
+                                <h5 class="fw-bold mb-0">
+                                    <a href="https://eng.hainnu.edu.cn/" target="_blank" class="edu-link">B.Eng in Automation Technology</a>
+                                </h5>
                                 <p class="mb-0 text-muted">Hainan Normal University, China</p>
                             </li>
                             <li>
-                                <h5 class="fw-bold mb-0">Diploma in Computer Engineering</h5>
+                                <h5 class="fw-bold mb-0">
+                                    <a href="https://pec.edu.np/" target="_blank" class="edu-link">Diploma in Computer Engineering</a>
+                                </h5>
                                 <p class="mb-0 text-muted">Pokhara Engineering College, Nepal</p>
                             </li>
                         </ul>
                     </div>
-                </div>
+                    </div>
             </div>
         </section>
         
@@ -349,7 +436,7 @@
     </main>
 
     <footer id="contact" class="pt-5 pb-5">
-        <div class_ ="container">
+        <div class="container">
              <div class="row">
                 <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
                     <h2 class="section-title">Contact</h2>
