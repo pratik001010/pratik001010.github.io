@@ -169,7 +169,8 @@
         }
         #about h2.section-title,
         #projects h2.section-title,
-        #contact h2.section-title {
+        #contact h2.section-title,
+        #ai-bot h2.section-title { /* Added AI bot here */
              text-align: left;
         }
         
@@ -304,6 +305,9 @@
                         <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#ai-bot">AI Bot</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -373,6 +377,7 @@
                 <img alt="NFC" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/nfc-5.svg" />
             </div>
         </div>
+        
         <section id="about">
             <div class="container">
                 <div class="row">
@@ -484,8 +489,24 @@
 
             </div>
         </section>
-        
-    </main>
+
+        <section id="ai-bot" style="padding-bottom: 60px;">
+            <div class="container">
+                <h2 class="section-title">🤖 Ask My AI Bot</h2>
+                <p class="lead" style="font-size: 1.1rem; color: #6c757d;">You can ask about my skills, projects, or even for a creative idea!</p>
+                
+                <div class="input-group mb-3">
+                  <input type="text" id="prompt-input" class="form-control" placeholder="e.g., What is Pratik's experience with Python?">
+                  <button id="ask-button" class="btn btn-primary" type="button">Ask</button>
+                </div>
+                
+                <p style="margin-top: 15px;"><strong>AI Answer:</strong></p>
+                <div style="background-color: #f8f9fa; padding: 1.25rem; border-radius: 5px; min-height: 70px;">
+                    <p id="ai-answer-box" style="margin-bottom: 0;">...</p>
+                </div>
+            </div>
+        </section>
+        </main>
 
     <footer id="contact" class="pt-5 pb-5">
         <div class="container">
@@ -506,6 +527,7 @@
                 </div>
             </div>
         </div>
+        
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -542,6 +564,64 @@
                 cursorDot.classList.remove('hovered');
             });
         });
+
+        // --- 🤖 NEW AI BOT SCRIPT ---
+        const askButton = document.getElementById('ask-button');
+        const promptInput = document.getElementById('prompt-input');
+        const answerBox = document.getElementById('ai-answer-box');
+
+        // This function runs when the 'Ask' button is clicked
+        const handleAskBot = async () => {
+            const question = promptInput.value;
+            if (!question) {
+              answerBox.textContent = "Please ask a question.";
+              return;
+            }
+
+            answerBox.textContent = "Thinking...";
+            askButton.disabled = true; // Disable button while thinking
+
+            // 1. This is your API's URL (from your Cloudflare dashboard)
+            const WORKER_URL = "https://ai-bot-api.pratik010khadka.workers.dev"; 
+
+            try {
+              // 2. Send the question to YOUR secure API
+              const response = await fetch(WORKER_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ prompt: question })
+              });
+
+              if (!response.ok) {
+                // Try to get a more specific error from the API
+                const errorData = await response.json().catch(() => ({})); // Use .catch in case body isn't valid JSON
+                throw new Error(`Error: ${response.statusText} - ${errorData.answer || 'Unknown error'}`);
+              }
+
+              // 3. Get the clean answer back from YOUR API
+              const data = await response.json();
+              answerBox.textContent = data.answer;
+
+            } catch (error) {
+              console.error("Error fetching AI response:", error);
+              answerBox.textContent = "Sorry, I'm having trouble connecting to my brain right now.";
+            }
+
+            askButton.disabled = false; // Re-enable the button
+        };
+
+        // Check if the elements exist before adding listeners
+        if (askButton) {
+            askButton.addEventListener('click', handleAskBot);
+            
+            // Also allow pressing 'Enter' in the input box
+            promptInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    handleAskBot();
+                }
+            });
+        }
+        // --- END AI BOT SCRIPT ---
     });
     </script>
     </body>
