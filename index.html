@@ -20,11 +20,9 @@
             background-color: #ffffff;
             color: #212529;
         }
-
-        /* --- 1. Navigation Bar --- */
         .navbar {
             box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-            background-color: #000000 !important; /* Solid Black */
+            background-color: #000000 !important;
         }
         .navbar-brand .navbar-profile-pic {
             height: 35px;
@@ -32,17 +30,14 @@
             object-fit: cover;
             border-radius: 50%;
             margin-right: 10px;
-            border: 2px solid #0d6efd; /* Blue border */
+            border: 2px solid #0d6efd;
         }
-        /* (I've removed the old .nav-link styles, as they're now in the .offcanvas styles) */
         .navbar-dark .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
         .navbar-dark .navbar-toggler {
             border-color: rgba(255,255,255,0.3);
         }
-
-        /* --- 2. HERO SECTION --- */
         .hero-section {
             background-color: #ffffff;
             padding: 100px 0 80px 0;
@@ -102,8 +97,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-
-        /* --- SCROLLING LOGO BANNER --- */
         .scrolling-banner {
             overflow: hidden;
             padding: 1.5rem 0;
@@ -129,8 +122,6 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
-
-        /* --- 3. Global Section Styles --- */
         section {
             padding: 80px 0;
         }
@@ -146,11 +137,10 @@
         #about h2.section-title,
         #projects h2.section-title,
         #contact h2.section-title,
-        #ai-bot h2.section-title {
+        #ai-bot h2.section-title,
+        #curiosity-feed h2.section-title {
              text-align: left;
         }
-        
-        /* --- 4. About Me Section --- */
         #about p {
             font-size: 1.1rem;
             line-height: 1.7;
@@ -173,8 +163,6 @@
             color: #0d6efd;
             text-decoration: underline;
         }
-        
-        /* --- 5. Projects Section --- */
         .project-item {
             margin-bottom: 2.5rem;
             padding-bottom: 2.5rem;
@@ -198,13 +186,9 @@
             border-radius: 20px;
             padding: 8px 20px;
         }
-
-        /* --- 6. Education Section --- */
         #education {
             background-color: #f8f9fa;
         }
-
-        /* --- 7. Footer --- */
         footer {
             background-color: #343a40;
             color: #ccc;
@@ -232,8 +216,6 @@
         footer .footer-link:hover {
             color: #0d6efd;
         }
-        
-        /* --- Custom Cursor Dot --- */
         #cursor-dot {
             width: 8px;
             height: 8px;
@@ -251,13 +233,11 @@
         #cursor-dot.hovered {
             transform: scale(3.5);
         }
-
-        /* --- AI Bot "Gemini Style" Input (NEW) --- */
         #ai-bot .input-group {
             border: none;
             border-radius: 50px; 
             padding: 5px; 
-            background-color: white; /* Changed to white */
+            background-color: white; 
             transition: all 0.2s ease-in-out;
             box-shadow: none; 
             width: 100%; 
@@ -309,16 +289,14 @@
             padding: 0; 
             border-radius: 0; 
         }
-
-        /* --- (NEW) FULLSCREEN OVERLAY MENU --- */
         .offcanvas.offcanvas-top {
-            height: 100vh; /* Make it full height */
-            background-color: #000; /* Black background */
+            height: 100vh;
+            background-color: #000;
             color: #fff;
         }
         .offcanvas .btn-close {
             filter: invert(1) grayscale(100%) brightness(200%);
-            font-size: 1.5rem; /* Make it a bit bigger */
+            font-size: 1.5rem;
         }
         .offcanvas-title {
             display: none;
@@ -333,16 +311,81 @@
             width: 100%;
         }
         .offcanvas-body .nav-link {
-            font-family: 'Wix Madefor Text', sans-serif; /* Matching your body font */
-            font-size: 2.5rem; /* Big text (adjust as needed) */
-            font-weight: 700; /* Bold */
-            color: #fff !important; /* White */
-            padding: 0.75rem 0; /* Space between links */
+            font-family: 'Wix Madefor Text', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff !important;
+            padding: 0.75rem 0;
             transition: color 0.2s ease;
-            text-transform: uppercase; /* Like your reference image */
+            text-transform: uppercase;
         }
         .offcanvas-body .nav-link:hover {
             color: #f8b4c8 !important; 
+        }
+
+        /* NEW Curiosity Feed Styling (MODIFIED FOR STACKED CARDS) */
+        .feed-item-card {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            transition: box-shadow 0.3s ease;
+            /* Removed row/col classes inside */
+        }
+        .feed-item-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .feed-item-card .feed-thumbnail {
+            width: 100%;
+            height: auto; 
+            max-height: 350px; 
+            object-fit: cover;
+            display: block; 
+            border-bottom: 1px solid #e9ecef;
+        }
+        .feed-item-card .card-body {
+            padding: 1.5rem;
+        }
+        .feed-item-card .feed-title {
+            font-family: 'Wix Madefor Text', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: #212529;
+            line-height: 1.3;
+        }
+        .feed-item-card .feed-category {
+            font-size: 0.95rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+        .feed-item-card .feed-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #343a40;
+            margin-bottom: 1.5rem;
+        }
+        .feed-item-card .feed-link {
+            width: auto;
+            display: inline-flex;
+            align-items: center;
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
+        .feed-item-card .feed-link i {
+            margin-right: 8px;
+        }
+        /* Hide the <hr> from the template as it's now part of the card styling */
+        .feed-item-template hr {
+            display: none;
+        }
+        @media (max-width: 767.98px) {
+            .feed-item-card .feed-thumbnail {
+                height: 200px;
+            }
+            .feed-item-card .feed-title {
+                font-size: 1.5rem;
+            }
         }
         /* --- End of New CSS --- */
 
@@ -377,6 +420,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#curiosity-feed">My Feed</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#ai-bot">AI Bot</a>
@@ -425,10 +471,10 @@
                 <img alt="LoRaWAN" style="height: 40px;" src="https://images.seeklogo.com/logo-png/42/1/lorawan-logo-png_seeklogo-428968.png" />
                 <img alt="Raspberry Pi" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/raspberry-pi.svg" />
                 <img alt="Visual Studio" style="height: 40px;" src="https://visualstudio.microsoft.com/wp-content/uploads/2021/10/Product-Icon.svg" />
-                <img alt="Zigbee" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/zigbee.svg" />
+                <img alt="Zigbee" src="https://cdn.worldvectorlogo.com/logos/zigbee.svg" />
                 <img alt="Sigfox" style="height: 40px;" src="https://upload.wikimedia.org/wikipedia/fr/thumb/7/73/Sigfox_logo.svg/600px-Sigfox_logo.svg.png?20161119100517" />
                 <img alt="Bluetooth" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/bluetooth.svg" />
-                <img alt="NFC" style="height: 40px;" src="https://i.fbcd.co/products/resized/resized-1500-1000/2490-dd9fd6ad4e0db46fa7e919dd2abfd27f82ca9dd45705ad76dc14186c9c37de2e.webp" />
+                <img alt="NFC" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/nfc-5.svg" />
                 
                 <img alt="Arduino" src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" />
                 <img alt="STM32" src="https://raw.githubusercontent.com/STMicroelectronics/.github/311e6372d0fccf4bb17769da319b2bac525ffd43/profile/images/st-logo.svg" />
@@ -484,7 +530,7 @@
                                 </small>
                                 <small class="text-muted d-block mt-1">
                                     <strong>2nd Sem (Sensors & Devices):</strong><br>
-                                    <a href="httpsis://www.uni-siegen.de/" target="_blank" class="edu-link">University of Siegen, Germany</a>
+                                    <a href="https://www.uni-siegen.de/" target="_blank" class="edu-link">University of Siegen, Germany</a>
                                 </small>
                                 <small class="text-muted d-block mt-1">
                                     <strong>1st Sem (Functional Materials):</strong><br>
@@ -500,7 +546,7 @@
                             <li>
                                 <h5 class="fw-bold mb-0">Diploma in Computer Engineering</h5>
                                 <p class="mb-0 text-muted">
-                                    <a href="httpsis://pec.edu.np/" target="_blank" class="edu-link">Pokhara Engineering College (पोखरा इन्जिनियरिङ क्याम्पस)</a>, Nepal
+                                    <a href="https://pec.edu.np/" target="_blank" class="edu-link">Pokhara Engineering College (पोखरा इन्जिनियरिङ क्याम्पस)</a>, Nepal
                                 </p>
                             </li>
                         </ul>
@@ -556,13 +602,45 @@
                     </div>
                     <div class="col-lg-7">
                         <p>Integrating optical sensors for honey levels, a stepper-motor system for frame splitting, 3D-printed honeyframes, and an IoT dashboard for remote monitoring.</p>
-                        <a href="https://drive.google.com/drive/folders/1zwYiBB785atWIqGuImsrUblPSQ-P2Hcg?usp=sharing" target="_blank" class="btn btn-outline-secondary"><i class="fas fa-folder-open"></i> View Concept</a>
+                        <a href="https://drive.google.com/drive/folders/1zwYiBB785atWlqGulmsrUbIPSQ-P2Hcg?usp=sharing" target="_blank" class="btn btn-outline-secondary"><i class="fas fa-folder-open"></i> View Concept</a>
                     </div>
                 </div>
 
             </div>
         </section>
 
+        <section id="curiosity-feed">
+            <div class="container">
+                <h2 class="section-title">My Curiosity Feed</h2>
+                <p class="lead" style="font-size: 1.1rem; color: #6c757d;">
+                    My personal favorite, for "things that fascinated me.
+                </p>
+                
+                <div id="feed-container">
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="mt-2">Loading feed...</p>
+                    </div>
+                </div>
+
+                <template id="feed-item-template">
+                    <div class="feed-item-card">
+                        <img class="feed-thumbnail" alt="Video Thumbnail">
+                        <div class="card-body">
+                            <h3 class="feed-title"></h3>
+                            <p class="feed-category"></p>
+                            <p class="feed-description"></p>
+                            <a href="#" target="_blank" class="btn btn-outline-primary feed-link">
+                                <i class="fas fa-book-open"></i> <span>Read More</span>
+                            </a>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+        </section>
         <section id="ai-bot" style="padding-bottom: 60px;">
             <div class="container">
                 
@@ -601,7 +679,7 @@
                 <div class="col-lg-6 text-center text-lg-end align-self-center">
                     <h3 class="mb-3">Find Me On</h3>
                     <div class="social-links mb-3">
-                        <a href="httpss://www.linkedin.com/in/pratik-khadka-21837416a/" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/pratik-khadka-21837416a/" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/pratik001010" target="_blank" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
                     </div>
                     <p class="mt-4"><small>&copy; 2025 Pratik Khadka. All rights reserved.</small></p>
@@ -611,31 +689,38 @@
         
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <script>
+    
+    // --- (NEW) THUMBNAIL EXTRACTOR FUNCTION ---
+    function getYouTubeThumbnail(url) {
+        const videoIdMatch = url.match(/(?:\?v=|\/embed\/|youtu\.be\/|\/v\/|\/e\/|watch\?v=)([^&?]*)/);
+        const videoId = videoIdMatch ? videoIdMatch[1] : null;
+        return videoId ? `https://img.youtube.com/vi/${videoId}/mqdefault.jpg` : null;
+    }
+
+
     document.addEventListener('DOMContentLoaded', (event) => {
+        // ... Your cursor-dot code ...
         const cursorDot = document.getElementById('cursor-dot');
-        
-        // Follow mouse movement
         window.addEventListener('mousemove', (e) => {
             const posX = e.clientX;
             const posY = e.clientY;
-            
             cursorDot.style.top = `${posY}px`;
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.opacity = '1';
         });
-
-        // Hide dot when mouse leaves window
         document.addEventListener('mouseleave', () => {
              cursorDot.style.opacity = '0';
         });
         document.addEventListener('mouseenter', () => {
              cursorDot.style.opacity = '1';
         });
-
-        // Add hover effect for links
         const links = document.querySelectorAll('a, .btn, button, .dropdown-item');
         links.forEach(link => {
             link.addEventListener('mouseenter', () => {
@@ -646,100 +731,158 @@
             });
         });
 
-        // --- 🤖 NEW AI BOT SCRIPT ---
+        // ... Your AI Bot Script ...
         const askButton = document.getElementById('ask-button');
         const promptInput = document.getElementById('prompt-input');
         const answerBox = document.getElementById('ai-answer-box');
-
-        // This function runs when the 'Ask' button is clicked
         const handleAskBot = async () => {
             const question = promptInput.value;
             if (!question) {
               answerBox.textContent = "Please ask a question.";
               return;
             }
-
             answerBox.textContent = "Thinking...";
-            askButton.disabled = true; // Disable button while thinking
-
-            // 1. This is your API's URL (from your Cloudflare dashboard)
+            askButton.disabled = true; 
             const WORKER_URL = "https://ai-bot-api.pratik010khadka.workers.dev"; 
-
             try {
-              // 2. Send the question to YOUR secure API
               const response = await fetch(WORKER_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ prompt: question })
               });
-
               if (!response.ok) {
-                // Try to get a more specific error from the API
-                const errorData = await response.json().catch(() => ({})); // Use .catch in case body isn't valid JSON
+                const errorData = await response.json().catch(() => ({}));
                 throw new Error(`Error: ${response.statusText} - ${errorData.answer || 'Unknown error'}`);
               }
-
-              // 3. Get the clean answer back from YOUR API
               const data = await response.json();
               answerBox.textContent = data.answer;
-
             } catch (error) {
               console.error("Error fetching AI response:", error);
               answerBox.textContent = "Sorry, I'm having trouble connecting to my brain right now.";
             }
-
-            askButton.disabled = false; // Re-enable the button
+            askButton.disabled = false;
         };
-
-        // Check if the elements exist before adding listeners
         if (askButton) {
             askButton.addEventListener('click', handleAskBot);
-            
-            // Also allow pressing 'Enter' in the input box
             promptInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
                     handleAskBot();
                 }
             });
         }
-        // --- END AI BOT SCRIPT ---
 
-        
-        // --- (FIX) FULLSCREEN MENU SCROLLING SCRIPT ---
-        
-        // 1. Get the menu element
+        // ... Your Menu Fix Script ...
         const menuElement = document.getElementById('fullscreenMenu');
-        
-        // 2. Check if the menu element exists
         if (menuElement) {
-            // 3. Get the Bootstrap Offcanvas instance
             const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(menuElement);
-
-            // 4. Find all links *inside* the menu
             const menuLinks = menuElement.querySelectorAll('.nav-link');
-
-            // 5. Add a click listener to each link
             menuLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
-                    // 6. Stop the link from doing its default jump
                     e.preventDefault();
-
-                    // 7. Get the target ID (e.g., "#about")
                     const targetId = link.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
-
-                    // 8. If the target exists on the page
                     if (targetElement) {
-                        // 9. Manually scroll to it smoothly
                         targetElement.scrollIntoView({ behavior: 'smooth' });
                     }
-
-                    // 10. Manually hide the offcanvas menu
                     bsOffcanvas.hide();
                 });
             });
         }
-        // --- END OF MENU FIX ---
+
+        // --- (NEW & CORRECTED) FIREBASE SCRIPT FOR CURIOSITY FEED ---
+
+        // 1. Your Firebase config (from your screenshot)
+        const firebaseConfig = {
+          apiKey: "AIzaSyB3huu_xP3Zw44BwjYWzJWnlQarSQtLQUk",
+          authDomain: "meetpratik-website.firebaseapp.com",
+          projectId: "meetpratik-website",
+          storageBucket: "meetpratik-website.appspot.com",
+          messagingSenderId: "357072055958",
+          appId: "1:357072055958:web:99085f300f3ed428111cb7"
+        };
+
+        // 2. Initialize Firebase (This is the corrected v8 syntax)
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // 3. Get references to our HTML elements
+        const feedContainer = document.getElementById('feed-container');
+        const itemTemplate = document.getElementById('feed-item-template');
+
+        // 4. The function to fetch and display the data
+        async function loadFeed() {
+            try {
+                // 5. Get documents from "curiosity-feed" (This is the corrected v8 syntax)
+                const querySnapshot = await db.collection("curiosity-feed")
+                                              .orderBy("timestamp", "desc")
+                                              .get();
+                
+                // Check if the feed is empty
+                if (querySnapshot.empty) {
+                    feedContainer.innerHTML = "<p>No items in the feed yet. Check back soon!</p>";
+                    return;
+                }
+
+                // Clear the "Loading..." placeholder
+                feedContainer.innerHTML = "";
+
+                // 6. Loop through each item in the database
+                querySnapshot.forEach((doc) => {
+                    const item = doc.data();
+                    
+                    // 7. Copy the hidden HTML template
+                    const card = itemTemplate.content.cloneNode(true);
+                    
+                    // 8. Fill in the template with our data
+                    card.querySelector('.feed-title').textContent = item.title;
+                    card.querySelector('.feed-category').textContent = item.category;
+                    card.querySelector('.feed-link').href = item.link;
+
+                    // 9. HANDLE THUMBNAIL LOGIC
+                    const thumbnail = card.querySelector('.feed-thumbnail');
+                    const linkSpan = card.querySelector('.feed-link span');
+                    const icon = card.querySelector('.feed-link i');
+
+                    if (item.link.includes("youtube.com") || item.link.includes("youtu.be")) {
+                        const thumbnailUrl = getYouTubeThumbnail(item.link);
+                        if (thumbnailUrl) {
+                            thumbnail.src = thumbnailUrl;
+                            thumbnail.style.display = 'block'; // Show the image
+                        }
+                        icon.className = "fab fa-youtube";
+                        linkSpan.textContent = " Watch Video";
+                    } else {
+                        // If it's an article, remove the image and use the book icon
+                        thumbnail.remove();
+                        icon.className = "fas fa-book-open";
+                        linkSpan.textContent = " Read More";
+                    }
+
+                    // Optional: Add a description if it exists
+                    if (item.description) {
+                        card.querySelector('.feed-description').textContent = item.description;
+                    } else {
+                        const desc = card.querySelector('.feed-description');
+                        if (desc) {
+                            desc.remove();
+                        }
+                    }
+                    
+                    // 10. Add the new card to the page
+                    feedContainer.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error("Error loading feed:", error);
+                feedContainer.innerHTML = "<p>Error loading feed. Please try again later. Check the console for details.</p>";
+            }
+        }
+
+        // 11. Run the function!
+        loadFeed();
+        
+        // --- END OF FIREBASE SCRIPT ---
+
     });
     </script>
     </body>
