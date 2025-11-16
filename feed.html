@@ -3,44 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pratik's Curiosity Feed</title>
+    <title>Pratik's Curiosity Feed - Embedded Insights</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Wix+Madefor+Text:wght@400;500;700&display=swap" rel="stylesheet">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Wix+Madefor+Text:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
+        /* BASE STYLES - Matching index.html */
         body {
             font-family: 'Wix Madefor Text', sans-serif;
-            background-color: #f8f9fa; /* Light background for the feed page */
+            background-color: #f8f9fa; /* Light grey background from index.html */
+            color: #212529;
             padding-top: 50px;
+            padding-bottom: 50px;
         }
         .container {
             max-width: 900px; /* Wider container for the feed */
         }
+        
+        /* TITLE STYLES - Matching index.html */
         h1.page-title {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            color: #0d6efd;
+            color: #0d6efd; /* Primary blue color */
             margin-bottom: 20px;
             font-size: 3rem;
             text-align: center;
         }
+        
+        /* CARD STYLING - New, polished look */
         .feed-item-card {
             border: 1px solid #e9ecef;
             border-radius: 8px;
             overflow: hidden;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem; /* Space between cards */
             transition: box-shadow 0.3s ease;
-            background-color: #fff;
+            background-color: #fff; /* White card background */
         }
         .feed-item-card:hover {
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Pronounced hover shadow */
         }
         .feed-item-card .feed-thumbnail {
             width: 100%;
             height: auto; 
-            max-height: 300px; /* A bit taller */
+            max-height: 400px; /* Larger image */
             object-fit: cover;
             display: block; 
             border-bottom: 1px solid #e9ecef;
@@ -50,7 +60,7 @@
         }
         .feed-item-card .feed-title {
             font-family: 'Wix Madefor Text', sans-serif;
-            font-weight: 600;
+            font-weight: 700; /* Bold title */
             font-size: 1.75rem;
             margin-bottom: 0.5rem;
             color: #212529;
@@ -67,11 +77,10 @@
             align-items: center;
             font-size: 1rem;
             padding: 10px 20px;
+            border-radius: 20px; /* Rounded button to match portfolio style */
         }
-        .feed-item-card .feed-link i {
-            margin-right: 8px;
-        }
-        /* Mobile adjustment */
+
+        /* MEDIA QUERIES */
         @media (max-width: 767.98px) {
             h1.page-title {
                 font-size: 2.5rem;
@@ -83,11 +92,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 text-center mb-5">
-                <h1 class="page-title">My Curiosity Feed</h1>
+                <h1 class="page-title">Embedded Insights</h1>
                 <p class="lead" style="font-size: 1.25rem;">
-                    A live feed of videos, articles, and ideas I'm exploring right now.
+                    My personal feed for things that fascinate me.
                 </p>
-                <a href="index.html" class="btn btn-outline-secondary btn-sm"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                <a href="index.html" class="btn btn-outline-secondary btn-sm" style="border-radius: 20px;"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
             </div>
             
             <div class="col-lg-8 col-md-10" id="feed-container">
@@ -107,7 +116,6 @@
             <div class="card-body">
                 <h3 class="feed-title"></h3>
                 <p class="feed-category"></p>
-                <p class="feed-description"></p>
                 <a href="#" target="_blank" class="btn btn-primary feed-link">
                     <i class="fas fa-book-open"></i> <span>Read More</span>
                 </a>
@@ -161,12 +169,12 @@
 
                 querySnapshot.forEach((doc) => {
                     const item = doc.data();
+                    
                     const card = itemTemplate.content.cloneNode(true);
                     
                     // Fill data
                     card.querySelector('.feed-title').textContent = item.title;
                     card.querySelector('.feed-category').textContent = item.category;
-                    card.querySelector('.feed-description').textContent = item.description || '';
                     card.querySelector('.feed-link').href = item.link;
 
                     // Thumbnail logic
@@ -178,11 +186,15 @@
                         const thumbnailUrl = getYouTubeThumbnail(item.link);
                         if (thumbnailUrl) {
                             thumbnail.src = thumbnailUrl;
+                            // The image is displayed by default in the template
                         }
                         icon.className = "fab fa-youtube";
                         linkSpan.textContent = " Watch Video";
                     } else {
+                        // If it's an article, remove the image and use the book icon
                         thumbnail.remove();
+                        icon.className = "fas fa-book-open";
+                        linkSpan.textContent = " Read Article";
                     }
                     
                     feedContainer.appendChild(card);
