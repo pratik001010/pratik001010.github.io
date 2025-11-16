@@ -322,73 +322,6 @@
         .offcanvas-body .nav-link:hover {
             color: #f8b4c8 !important; 
         }
-
-        /* NEW Curiosity Feed Styling (MODIFIED FOR STACKED CARDS) */
-        .feed-item-card {
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 2.5rem;
-            transition: box-shadow 0.3s ease;
-            /* Removed row/col classes inside */
-        }
-        .feed-item-card:hover {
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-        .feed-item-card .feed-thumbnail {
-            width: 100%;
-            height: auto; 
-            max-height: 350px; 
-            object-fit: cover;
-            display: block; 
-            border-bottom: 1px solid #e9ecef;
-        }
-        .feed-item-card .card-body {
-            padding: 1.5rem;
-        }
-        .feed-item-card .feed-title {
-            font-family: 'Wix Madefor Text', sans-serif;
-            font-weight: 600;
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-            color: #212529;
-            line-height: 1.3;
-        }
-        .feed-item-card .feed-category {
-            font-size: 0.95rem;
-            color: #6c757d;
-            margin-bottom: 1rem;
-        }
-        .feed-item-card .feed-description {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #343a40;
-            margin-bottom: 1.5rem;
-        }
-        .feed-item-card .feed-link {
-            width: auto;
-            display: inline-flex;
-            align-items: center;
-            font-size: 1rem;
-            padding: 10px 20px;
-        }
-        .feed-item-card .feed-link i {
-            margin-right: 8px;
-        }
-        /* Hide the <hr> from the template as it's now part of the card styling */
-        .feed-item-template hr {
-            display: none;
-        }
-        @media (max-width: 767.98px) {
-            .feed-item-card .feed-thumbnail {
-                height: 200px;
-            }
-            .feed-item-card .feed-title {
-                font-size: 1.5rem;
-            }
-        }
-        /* --- End of New CSS --- */
-
     </style>
 </head>
 <body>
@@ -422,7 +355,7 @@
                     <a class="nav-link" href="#projects">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#curiosity-feed">My Feed</a>
+                    <a class="nav-link" href="feed.html" target="_blank">My Feed</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#ai-bot">AI Bot</a>
@@ -487,10 +420,10 @@
                 <img alt="MATLAB" src="https://cdn.worldvectorlogo.com/logos/matlab.svg" />
                 <img alt="OpenCV" src="https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg" />
                 <img alt="Docker" src="https://cdn.worldvectorlogo.com/logos/docker.svg" />
-                <img alt="LoRaWAN" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/lorawan-1.svg" />
+                <img alt="LoRaWAN" style="height: 40px;" src="https://images.seeklogo.com/logo-png/42/1/lorawan-logo-png_seeklogo-428968.png" />
                 <img alt="Raspberry Pi" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/raspberry-pi.svg" />
-                <img alt="Visual Studio" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/visual-studio-code.svg" />
-                <img alt="Zigbee" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/zigbee.svg" />
+                <img alt="Visual Studio" style="height: 40px;" src="https://visualstudio.microsoft.com/wp-content/uploads/2021/10/Product-Icon.svg" />
+                <img alt="Zigbee" src="https://cdn.worldvectorlogo.com/logos/zigbee.svg" />
                 <img alt="Sigfox" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/sigfox.svg" />
                 <img alt="Bluetooth" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/bluetooth.svg" />
                 <img alt="NFC" style="height: 40px;" src="https://cdn.worldvectorlogo.com/logos/nfc-5.svg" />
@@ -609,17 +542,18 @@
             </div>
         </section>
 
- <section class="bg-light pt-5 pb-5">
-    <div class="container text-center">
-        <h2 class="section-title mb-4" style="text-align: center;">Explore My Curiosity Feed</h2>
-        <p class="lead mb-4">
-            View my latest discoveries, videos, and articles that I'm currently exploring.
-        </p>
-        <a href="feed.html" target="_blank" class="btn btn-primary btn-lg" style="border-radius: 25px;">
-            Open Full Feed <i class="fas fa-external-link-alt ms-2"></i>
-        </a>
-    </div>
-</section>
+        <section class="bg-light pt-5 pb-5">
+            <div class="container text-center">
+                <h2 class="section-title mb-4" style="text-align: center;">Explore My Curiosity Feed</h2>
+                <p class="lead mb-4">
+                    View my latest discoveries, videos, and articles that I'm currently exploring.
+                </p>
+                <a href="feed.html" target="_blank" class="btn btn-primary btn-lg" style="border-radius: 25px;">
+                    Open Full Feed <i class="fas fa-external-link-alt ms-2"></i>
+                </a>
+            </div>
+        </section>
+
         <section id="ai-bot" style="padding-bottom: 60px;">
             <div class="container">
                 
@@ -757,111 +691,26 @@
             const menuLinks = menuElement.querySelectorAll('.nav-link');
             menuLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
-                    e.preventDefault();
                     const targetId = link.getAttribute('href');
+                    const isExternal = targetId.includes('.html'); // Check if it's feed.html or another file
+                    
+                    if (isExternal) {
+                        // Close the menu immediately and let the link navigate
+                        bsOffcanvas.hide();
+                        // We DO NOT call e.preventDefault(), so the browser navigates.
+                        return;
+                    }
+
+                    // --- Internal Scroll Logic ---
+                    e.preventDefault(); // Stop the immediate jump
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         targetElement.scrollIntoView({ behavior: 'smooth' });
                     }
-                    bsOffcanvas.hide();
+                    bsOffcanvas.hide(); // Close the menu after scrolling starts
                 });
             });
         }
-
-        // --- (NEW & CORRECTED) FIREBASE SCRIPT FOR CURIOSITY FEED ---
-
-        // 1. Your Firebase config (from your screenshot)
-        const firebaseConfig = {
-          apiKey: "AIzaSyB3huu_xP3Zw44BwjYWzJWnlQarSQtLQUk",
-          authDomain: "meetpratik-website.firebaseapp.com",
-          projectId: "meetpratik-website",
-          storageBucket: "meetpratik-website.appspot.com",
-          messagingSenderId: "357072055958",
-          appId: "1:357072055958:web:99085f300f3ed428111cb7"
-        };
-
-        // 2. Initialize Firebase (This is the corrected v8 syntax)
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-
-        // 3. Get references to our HTML elements
-        const feedContainer = document.getElementById('feed-container');
-        const itemTemplate = document.getElementById('feed-item-template');
-
-        // 4. The function to fetch and display the data
-        async function loadFeed() {
-            try {
-                // 5. Get documents from "curiosity-feed" (This is the corrected v8 syntax)
-                const querySnapshot = await db.collection("curiosity-feed")
-                                              .orderBy("timestamp", "desc")
-                                              .get();
-                
-                // Check if the feed is empty
-                if (querySnapshot.empty) {
-                    feedContainer.innerHTML = "<p>No items in the feed yet. Check back soon!</p>";
-                    return;
-                }
-
-                // Clear the "Loading..." placeholder
-                feedContainer.innerHTML = "";
-
-                // 6. Loop through each item in the database
-                querySnapshot.forEach((doc) => {
-                    const item = doc.data();
-                    
-                    // 7. Copy the hidden HTML template
-                    const card = itemTemplate.content.cloneNode(true);
-                    
-                    // 8. Fill in the template with our data
-                    card.querySelector('.feed-title').textContent = item.title;
-                    card.querySelector('.feed-category').textContent = item.category;
-                    card.querySelector('.feed-link').href = item.link;
-
-                    // 9. HANDLE THUMBNAIL LOGIC
-                    const thumbnail = card.querySelector('.feed-thumbnail');
-                    const linkSpan = card.querySelector('.feed-link span');
-                    const icon = card.querySelector('.feed-link i');
-
-                    if (item.link.includes("youtube.com") || item.link.includes("youtu.be")) {
-                        const thumbnailUrl = getYouTubeThumbnail(item.link);
-                        if (thumbnailUrl) {
-                            thumbnail.src = thumbnailUrl;
-                            thumbnail.style.display = 'block'; // Show the image
-                        }
-                        icon.className = "fab fa-youtube";
-                        linkSpan.textContent = " Watch Video";
-                    } else {
-                        // If it's an article, remove the image and use the book icon
-                        thumbnail.remove();
-                        icon.className = "fas fa-book-open";
-                        linkSpan.textContent = " Read More";
-                    }
-
-                    // Optional: Add a description if it exists
-                    if (item.description) {
-                        card.querySelector('.feed-description').textContent = item.description;
-                    } else {
-                        const desc = card.querySelector('.feed-description');
-                        if (desc) {
-                            desc.remove();
-                        }
-                    }
-                    
-                    // 10. Add the new card to the page
-                    feedContainer.appendChild(card);
-                });
-
-            } catch (error) {
-                console.error("Error loading feed:", error);
-                feedContainer.innerHTML = "<p>Error loading feed. Please try again later. Check the console for details.</p>";
-            }
-        }
-
-        // 11. Run the function!
-        loadFeed();
-        
-        // --- END OF FIREBASE SCRIPT ---
-
     });
     </script>
     </body>
