@@ -19,7 +19,6 @@
             font-family: 'Wix Madefor Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: #ffffff;
             color: #212529;
-            /* Default cursor is visible */
         }
 
         /* --- 1. Navigation Bar --- */
@@ -27,26 +26,15 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.04);
             background-color: #000000 !important; /* Solid Black */
         }
-        /* Navbar logo for your image with blue border */
         .navbar-brand .navbar-profile-pic {
-            height: 35px; /* Adjust size as needed */
+            height: 35px;
             width: 35px;
             object-fit: cover;
             border-radius: 50%;
             margin-right: 10px;
             border: 2px solid #0d6efd; /* Blue border */
         }
-        .navbar-nav .nav-link {
-            font-family: 'Wix Madefor Text', sans-serif;
-            font-weight: 500;
-            color: #ffffff !important; /* White text */
-            transition: color 0.2s ease-in-out;
-            padding: 0.5rem 1rem;
-        }
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: #cccccc !important; /* Light grey for hover */
-        }
+        /* (I've removed the old .nav-link styles, as they're now in the .offcanvas styles) */
         .navbar-dark .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
@@ -56,20 +44,17 @@
 
         /* --- 2. HERO SECTION --- */
         .hero-section {
-            background-color: #ffffff; /* White background */
-            padding: 100px 0 80px 0; /* Adjusted padding */
+            background-color: #ffffff;
+            padding: 100px 0 80px 0;
             text-align: left;
         }
-        
         .hero-title-container {
             display: flex;
-            justify-content: center; /* Center "Hi, Welcome" */
-            align-items: center;  /* Vertically center */
+            justify-content: center;
+            align-items: center;
             flex-wrap: wrap; 
             margin-bottom: 20px;
         }
-
-        /* Font for "Hi," */
         .hero-section h1.hero-title {
             font-size: 7rem;
             font-weight: 700;
@@ -78,30 +63,23 @@
             margin: 0;
             margin-right: 1.5rem; 
         }
-        
-        /* Style for the "Welcome" GIF - 300% bigger */
         .hero-title-container .welcome-gif {
-            height: 297px; /* 99px * 3 */
-            width: 333px;  /* 111px * 3 */
+            height: 297px;
+            width: 333px;
         }
-
-        /* Container for the profile picture */
         .profile-pic-container {
-            width: 100%; /* Take full width */
-            text-align: center; /* Center the image */
-            margin-top: 30px; /* Space below "Hi, Welcome" */
-            margin-bottom: 30px; /* Space above "I'm Pratik Khadka" */
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
         }
-
-        /* Style for your profile picture in hero */
         .hero-profile-pic {
-            height: 350px; /* Bigger */
-            width: 350px; /* Bigger */
+            height: 350px;
+            width: 350px;
             object-fit: cover;
-            border-radius: 50%; /* Make it circular */
-            border: 4px solid #0d6efd; /* Blue border */
+            border-radius: 50%;
+            border: 4px solid #0d6efd;
         }
-
         .hero-section .lead {
             font-size: 1.5rem;
             font-weight: 500;
@@ -116,7 +94,7 @@
             text-align: center;
         }
         .hero-section .summary {
-            font-size: 1.375rem; /* 22px */
+            font-size: 1.375rem;
             max-width: 700px;
             font-weight: 400;
             line-height: 1.6;
@@ -128,7 +106,7 @@
         /* --- SCROLLING LOGO BANNER --- */
         .scrolling-banner {
             overflow: hidden;
-            padding: 1.5rem 0; /* More vertical space */
+            padding: 1.5rem 0;
             background-color: #ffffff;
             white-space: nowrap;
             border-top: 1px solid #e9ecef;
@@ -136,41 +114,39 @@
         }
         .scrolling-banner-track {
             display: inline-block;
-            animation: scroll-logos 40s linear infinite; /* Slower for logos */
+            animation: scroll-logos 40s linear infinite;
         }
         .scrolling-banner-track img {
-            height: 50px; /* Clean, uniform height */
-            margin: 0 20px; /* Spacing */
+            height: 50px;
+            margin: 0 20px;
             vertical-align: middle;
             transition: transform 0.2s ease-in-out;
         }
         .scrolling-banner-track img:hover {
-            transform: scale(1.25); /* Zoom effect */
+            transform: scale(1.25);
         }
         @keyframes scroll-logos {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
-        /* --- END OF BANNER CSS --- */
-
 
         /* --- 3. Global Section Styles --- */
         section {
             padding: 80px 0;
         }
         section h2.section-title {
-            font-family: 'Playfair Display', serif; /* Stylish font */
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
             color: #0d6efd;
             margin-bottom: 40px;
-            text-transform: none; /* No more uppercase */
+            text-transform: none;
             letter-spacing: 0;
-            font-size: 2.5rem; /* Bigger */
+            font-size: 2.5rem;
         }
         #about h2.section-title,
         #projects h2.section-title,
         #contact h2.section-title,
-        #ai-bot h2.section-title { /* Added AI bot here */
+        #ai-bot h2.section-title {
              text-align: left;
         }
         
@@ -182,21 +158,19 @@
         #about h3 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            color: #0d6efd; /* Blue color */
+            color: #0d6efd;
             font-size: 1.75rem;
             margin-top: 2.5rem;
             margin-bottom: 1.5rem;
             border-bottom: 1px solid #e9ecef;
             padding-bottom: 10px;
         }
-        
-        /* Style for Education Links */
         .edu-link {
             text-decoration: none;
-            color: #212529; /* Black text */
+            color: #212529;
         }
         .edu-link:hover {
-            color: #0d6efd; /* Blue on hover */
+            color: #0d6efd;
             text-decoration: underline;
         }
         
@@ -227,7 +201,7 @@
 
         /* --- 6. Education Section --- */
         #education {
-            background-color: #f8f9fa; /* Light grey background */
+            background-color: #f8f9fa;
         }
 
         /* --- 7. Footer --- */
@@ -266,19 +240,109 @@
             background-color: white;
             border-radius: 50%;
             position: fixed;
-            pointer-events: none; /* Lets you click through it */
+            pointer-events: none;
             z-index: 9999;
-            mix-blend-mode: difference; /* Inverts color! */
-            
-            top: -20px; /* Start hidden */
+            mix-blend-mode: difference;
+            top: -20px;
             left: -20px;
             opacity: 0;
-            
             transition: transform 0.2s ease-out, top 0.1s ease-out, left 0.1s ease-out, opacity 0.1s ease-out;
         }
-        
         #cursor-dot.hovered {
-            transform: scale(3.5); /* Make the dot bigger */
+            transform: scale(3.5);
+        }
+
+        /* --- AI Bot "Gemini Style" Input (NEW) --- */
+        #ai-bot .input-group {
+            border: none;
+            border-radius: 50px; 
+            padding: 5px; 
+            background-color: white; /* Changed to white */
+            transition: all 0.2s ease-in-out;
+            box-shadow: none; 
+            width: 100%; 
+        }
+        #ai-bot .input-group:focus-within {
+            border-color: transparent; 
+            box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.2); 
+        }
+        #ai-bot .form-control {
+            border: none !important; 
+            box-shadow: none !important; 
+            background-color: transparent !important; 
+            font-size: 1.1rem;
+            height: 50px; 
+            padding-left: 1.25rem;
+            color: #1a0dab; 
+            flex-grow: 1; 
+        }
+        #ai-bot .form-control::placeholder {
+             color: #6c757d; 
+             opacity: 0.8;
+        }
+        #ai-bot .btn {
+            border-radius: 50px !important; 
+            height: 50px;
+            width: 50px; 
+            font-size: 1.2rem; 
+            background-color: #0d6efd;
+            border: none;
+            transition: background-color 0.2s ease;
+            flex-shrink: 0; 
+        }
+        #ai-bot .btn:hover {
+            background-color: #0a58ca; 
+        }
+        #ai-bot .btn:disabled {
+            background-color: #6c757d; 
+        }
+        #ai-bot #ai-answer-box {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #343a40; 
+        }
+        #ai-bot > div:last-of-type { 
+            box-shadow: none; 
+            border: none; 
+            background-color: white;
+            width: 100%; 
+            padding: 0; 
+            border-radius: 0; 
+        }
+
+        /* --- (NEW) FULLSCREEN OVERLAY MENU --- */
+        .offcanvas.offcanvas-top {
+            height: 100vh; /* Make it full height */
+            background-color: #000; /* Black background */
+            color: #fff;
+        }
+        .offcanvas .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+            font-size: 1.5rem; /* Make it a bit bigger */
+        }
+        .offcanvas-title {
+            display: none;
+        }
+        .offcanvas-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .offcanvas-body .navbar-nav {
+            width: 100%;
+        }
+        .offcanvas-body .nav-link {
+            font-family: 'Wix Madefor Text', sans-serif; /* Matching your body font */
+            font-size: 2.5rem; /* Big text (adjust as needed) */
+            font-weight: 700; /* Bold */
+            color: #fff !important; /* White */
+            padding: 0.75rem 0; /* Space between links */
+            transition: color 0.2s ease;
+            text-transform: uppercase; /* Like your reference image */
+        }
+        .offcanvas-body .nav-link:hover {
+            color: #f8b4c8 !important; 
         }
         /* --- End of New CSS --- */
 
@@ -288,33 +352,42 @@
     
     <div id="cursor-dot"></div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNavbar">
+    <nav class="navbar navbar-dark sticky-top" id="mainNavbar">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img alt="Pratik Khadka" class="navbar-profile-pic" src="https://raw.githubusercontent.com/pratik001010/pratik001010/d37b4f21a74715def19ad06f61a927fce66c1e81/pratika.PNG">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="offcanvas" data-bs-target="#fullscreenMenu" 
+                    aria-controls="fullscreenMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ai-bot">AI Bot</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
 
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="fullscreenMenu" aria-labelledby="fullscreenMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="fullscreenMenuLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ai-bot">AI Bot</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
     <main>
         
         <section class="hero-section" id="home">
@@ -427,7 +500,7 @@
                             <li>
                                 <h5 class="fw-bold mb-0">Diploma in Computer Engineering</h5>
                                 <p class="mb-0 text-muted">
-                                    <a href="https::/pec.edu.np/" target="_blank" class="edu-link">Pokhara Engineering College (पोखरा इन्जिनियरिङ क्याम्पस)</a>, Nepal
+                                    <a href="httpsis://pec.edu.np/" target="_blank" class="edu-link">Pokhara Engineering College (पोखरा इन्जिनियरिङ क्याम्पस)</a>, Nepal
                                 </p>
                             </li>
                         </ul>
@@ -483,7 +556,7 @@
                     </div>
                     <div class="col-lg-7">
                         <p>Integrating optical sensors for honey levels, a stepper-motor system for frame splitting, 3D-printed honeyframes, and an IoT dashboard for remote monitoring.</p>
-                        <a href="https://drive.google.com/drive/folders/1zwYiBB785atWlqGulmsrUbIPSQ-P2Hcg?usp=sharing" target="_blank" class="btn btn-outline-secondary"><i class="fas fa-folder-open"></i> View Concept</a>
+                        <a href="https://drive.google.com/drive/folders/1zwYiBB785atWIqGuImsrUblPSQ-P2Hcg?usp=sharing" target="_blank" class="btn btn-outline-secondary"><i class="fas fa-folder-open"></i> View Concept</a>
                     </div>
                 </div>
 
@@ -497,20 +570,24 @@
                     <img src="images/pratikchatbot.gif" alt="AI Bot" style="height: 100px; vertical-align: middle; margin-right: 10px; background-color: white;">
                     Ask My AI Bot
                 </h2>
+
                 <p class="lead" style="font-size: 1.1rem; color: #6c757d;">You can ask about my skills, projects, or even for a creative idea!</p>
                 
-                <div class="input-group mb-3">
+                <div class="input-group">
                   <input type="text" id="prompt-input" class="form-control" placeholder="e.g., What is Pratik's experience with Python?">
-                  <button id="ask-button" class="btn btn-primary" type="button">Ask</button>
+                  <button id="ask-button" class="btn btn-primary" type="button">
+                    <i class="fas fa-paper-plane"></i>
+                  </button>
                 </div>
                 
                 <p style="margin-top: 15px;"><strong>AI Answer:</strong></p>
-                <div style="background-color: #f8f9fa; padding: 1.25rem; border-radius: 5px; min-height: 70px;">
+                <div style="background-color: white; padding: 0; border-radius: 0; min-height: 70px; border: none; box-shadow: none;">
                     <p id="ai-answer-box" style="margin-bottom: 0;">...</p>
                 </div>
             </div>
         </section>
-        </main>
+        
+    </main>
 
     <footer id="contact" class="pt-5 pb-5">
         <div class="container">
@@ -626,6 +703,43 @@
             });
         }
         // --- END AI BOT SCRIPT ---
+
+        
+        // --- (FIX) FULLSCREEN MENU SCROLLING SCRIPT ---
+        
+        // 1. Get the menu element
+        const menuElement = document.getElementById('fullscreenMenu');
+        
+        // 2. Check if the menu element exists
+        if (menuElement) {
+            // 3. Get the Bootstrap Offcanvas instance
+            const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(menuElement);
+
+            // 4. Find all links *inside* the menu
+            const menuLinks = menuElement.querySelectorAll('.nav-link');
+
+            // 5. Add a click listener to each link
+            menuLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // 6. Stop the link from doing its default jump
+                    e.preventDefault();
+
+                    // 7. Get the target ID (e.g., "#about")
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    // 8. If the target exists on the page
+                    if (targetElement) {
+                        // 9. Manually scroll to it smoothly
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+
+                    // 10. Manually hide the offcanvas menu
+                    bsOffcanvas.hide();
+                });
+            });
+        }
+        // --- END OF MENU FIX ---
     });
     </script>
     </body>
